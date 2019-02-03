@@ -139,8 +139,9 @@ color: red;
 }
 
 .box {
-  padding: 150px 75px 150px 75px;
+  padding: 120px 75px 0px 75px;
   border: 1px solid #84aab8;
+  overflow: hidden;
 }
 
 #textBox {
