@@ -1,115 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width , initial-scale=1 , maximum-scale=1.0 , minimum-scale=1.0 , user-scalable=0" />
-    <meta charset="UTF-8"> 
-    <title>YodaQuoBot</title>
+  <title>YodaQuoBot</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0 , minimum-scale=1.0 , user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/> 
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Major+Mono+Display|Source+Sans+Pro" rel="stylesheet">
-
-    <!-- <script src="assets/javascript/main.js"></script> -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-    <!-- <script src="https://code.jquery.com/jquery.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
 </head>
 <body>
 
-  <!-- Main Bootstrap Wrapper-->
-  <div class="container">
+<!-- Main Wrapper-->
+<div class="container-fluid">
 
-      <!-- Navbar -->
+<!-- Top Navbar-->
 
-    <div class="row">
-            <div class="col-sm-12">
-            <nav class="navbar navbar-dark bg-light justify-content-between">
-                    <form class="form-inline">
-                      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Author</button>
-                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Random</button>
-                      <!-- <button class="btn btn-primary" href="#" data-toggle="modal" data-target=".login-register-form">
-                            Login - Registration Modal
-                      </button > -->
-                      
-                    
-                    </form>
-                    <!-- Signin & Signup -->
-                    <a class="btn btn-primary" href="#" data-toggle="modal" data-target=".login-register-form">
-                            Login - Registration Modal
-                         </a>
- 
-                         <!-- Login / Register Modal-->
-                         <div class="modal fade login-register-form" role="dialog">
-                             <div class="modal-dialog modal-sm">
-                                 <div class="modal-content">
-                                     <div class="modal-header">
-                                         <button type="button" class="close" data-dismiss="modal">
-                                             <span class="glyphicon glyphicon-remove"></span>
-                                         </button>
-                                         <ul class="nav nav-tabs">
-                                             <li class="active"><a data-toggle="tab" href="#login-form"> Login <span class="glyphicon glyphicon-user"></span></a></li>
-                                             <li><a data-toggle="tab" href="#registration-form"> Register <span class="glyphicon glyphicon-pencil"></span></a></li>
-                                         </ul>
-                                     </div>
-                                     <div class="modal-body">
-                                         <div class="tab-content">
-                                             <div id="login-form" class="tab-pane fade in active">
-                                                 <form action="/">
-                                                     <div class="form-group">
-                                                         <label for="email">Email:</label>
-                                                         <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-                                                     </div>
-                                                     <div class="form-group">
-                                                         <label for="pwd">Password:</label>
-                                                         <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-                                                     </div>
-                                                     <div class="checkbox">
-                                                         <label><input type="checkbox" name="remember"> Remember me</label>
-                                                     </div>
-                                                     <button type="submit" class="btn btn-default">Login</button>
-                                                 </form>
-                                             </div>
-                                             <div id="registration-form" class="tab-pane fade">
-                                                 <form action="/">
-                                                     <div class="form-group">
-                                                         <label for="name">Your Name:</label>
-                                                         <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name">
-                                                     </div>
-                                                     <div class="form-group">
-                                                         <label for="newemail">Email:</label>
-                                                         <input type="email" class="form-control" id="newemail" placeholder="Enter new email" name="newemail">
-                                                     </div>
-                                                     <div class="form-group">
-                                                         <label for="newpwd">Password:</label>
-                                                         <input type="password" class="form-control" id="newpwd" placeholder="New password" name="newpwd">
-                                                     </div>
-                                                     <button type="submit" class="btn btn-default">Register</button>
-                                                 </form>
-                                             </div>
- 
-                                         </div>
-                                     </div>
-            </nav>
-    </div>
-    
-    
-    
-    
-    </div>    
-    
-    <h1>YodaQuoBot</h1>
-    <p>I am an inspirational quote generator dedicated to preserving the language of the Jedi Master, Yoda.</p>
-    <br>
-    <p>Using your favorite author quotes or searching randomly,  see Yoda translate them into his unique snappy way of turning a phrase. </p>
-    
-    </div>
+        <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span> 
+                    </button>
+                    <a class="navbar-brand" href="#">YodaQuoBot</a>
+                  </div>
+                  <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#about">RANDOM QUOTE</a></li>
+                        <li><a href="#services">SUGGESTED AUTHORS</a></li>
+                        <li><a href="#portfolio">FAVORITES</a></li>
+                        <li><a href="#portfolio">LOGIN/REGISTER</a></li>
 
+                    </ul>
+                  </div>
+                </div>
+              </nav><!-- End Top Navbar-->
+
+<!-- Main App Title-->
+
+<div class="jumbotron text-center">
+  <!-- <h1>YodaQuoBot</h1>  -->
+  <p>I am an inspirational quote generator dedicated to preserving the language of the beloved Jedi Master, Yoda.</p> 
+  <p>Use suggested author quotes or search randomly,  see a translation into Yoda speak: his unique snappy way of turning a phrase.</p>
+
+</div>
+
+<!-- Test for Author Panel One-->
+
+<div class="container-fluid bg-green">
+        <div class="row">
+          <div class="col-sm-8">
+            <h2>Quote goes here</h2>
+            <h4>Author Name Here</h4> 
+            <button class="btn btn-default btn-lg">Favorite Icon</button>
+          </div>
+          <div class="col-sm-4">
+            <span class="Yodaimageplaceholder"></span>
+          </div>
+        </div>
+
+</div> <!-- End Test for Author Panel One-->
+
+
+<!-- Test for Author Panel Two as Portfolio-->
+<div class="container-fluid text-center bg-green">
+
+        <div class="row text-center">
+          <div class="col-sm-6">
+            <div class="thumbnail">
+              <img src="paris.jpg" alt="Paris">
+              <p><strong>QuotefromAPI</strong></p>
+              <p>Author</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="thumbnail">
+              <img src="newyork.jpg" alt="New York">
+              <p>QuoteinYodaSpeak</p>
+            </div>
+          </div>
+      </div><!-- End Author Panel Two as Portfolio-->
+
+<!-- Footer for button get back to the Top-->
+    <footer class="container-fluid text-center">
+            <a href="#Yodabot" title="To Top">
+              <span class="glyphicon glyphicon-chevron-up" style="color:aliceblue;"></span>
+            </a>
+   
+    </footer>
+
+</div> <!-- End Main Wrapper-->
 </body>
 </html>
