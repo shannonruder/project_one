@@ -112,6 +112,14 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 
+// Clear
+
+function clear() {
+    localStorage.clear();
+    sessionStorage.clear();
+    Session.abondon();
+}
+
 // Initialize Everything
 function InitializeWindow() {
     for (var i=0; i<categories.length; i++) {
@@ -219,7 +227,7 @@ $("#register").on("click", function(event) {
 $("#logoutButton").on("click", function(event) {
     event.preventDefault();
     firebase.auth().signOut().then(function() {
-        $("#addTrains").hide();
+        clear();
     }).catch(function(error) {
         console.log(error);
     });
