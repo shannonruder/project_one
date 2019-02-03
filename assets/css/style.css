@@ -1,0 +1,125 @@
+body{
+    font-family: 400 15 px 'Source Sans Pro', sans-serif;
+    line-height: 1.8;
+    color: #fff;
+    background: #000;
+    margin: 0;
+}
+
+
+.jumbotron { 
+    background-color: #0000; /* Black */
+    font-family: 'Archivo Black', sans-serif;
+    color: #ffffff;
+    padding: 40px 20px;
+}
+
+p {
+    font-family: 'Archivo', sans-serif;
+    font-size: 16px !important;
+}
+
+h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+
+.bg-green {
+    background-color: #666633;
+
+}   
+.thumbnail {
+        padding: 0 0 15px 0;
+        border: none;
+        border-radius: 0;
+}
+      
+.thumbnail img {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 10px;
+}
+
+
+.container-fluid {
+    padding: 60px 50px;
+  }
+
+.navbar {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-bottom: 0;
+    background-color: #000;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+  }
+  
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #000 !important;
+    background-color: #fff !important;
+  }
+  
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+
+
+
+
+
+
+
+
+
+
+/* Login */
+
+.modal-header {
+    padding: 0;
+  }
+  .modal-header .close {
+    padding: 10px 15px;
+  }
+  .modal-header ul {
+    border: none;
+  }
+  .modal-header ul li {
+    margin: 0;
+  }
+  .modal-header ul li a {
+    border: none;
+    border-radius: 0;
+  }
+  .modal-header ul li.active a {
+    color: #e12f27;
+  }
+  .modal-header ul li a:hover {
+    border: none;
+  }
+  .modal-header ul li a span {
+    margin-left: 10px;
+  }
+  .modal-body .form-group {
+    margin-bottom: 10px;
+  }
+  
+  /* Login End */
