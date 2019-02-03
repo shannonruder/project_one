@@ -5,85 +5,51 @@
     position:relative;
     display: none;
     overflow: hidden;
-    font-size:12px;
+    font-size:14px;
 }
 
 #userName {
+    color:#ffffff;
     float:left;
     position:relative;
-    font-weight:bold; 
-    text-shadow:1px 1px #fff; 
-    padding:9px;
-}
-
-#logoutButton { 
-    float:right;
-    position:relative;
-    /* top:0px;
-    right:0px; */
-    cursor:pointer;
-    text-decoration: none;
-}
-
-
-#logoutButton span {
-    color:#777777; 
-    font-size:14px; 
-    font-weight:bold; 
-    text-shadow:1px 1px #fff; 
-    padding:7px 29px 9px 0px;
-    background:url(../images/loginArrow.png) no-repeat 53px 7px;
-    display:block;
-    
-}
-
-#logoutButton:hover span{
-
-    color:#333333;
+    padding-right: 20px;
 }
 
 /*------- Firebase Logout End -------*/
 
+
 /*------- Firebase Login / Register -------*/
-#container {
-    max-width: 200px;
-    float: right;
-}
 
 #loginContainer {
     float: left;
     position:relative;
     display: block;
-    /* overflow: hidden; */
-    font-size:12px;
+    font-size:14px;
+    padding-right: 20px;
 }
 
 #registerContainer {
     float: right;
     position:relative;
     display: block;
-    /* overflow: hidden; */
     font-size:12px;
 }
 
 /* Login Button */
-#loginButton, #registerButton { 
+#loginButton, #registerButton, #logoutButton { 
     float:right;
     position: relative;;
-    /* top:0px;
-    right:0px; */
     cursor:pointer;
-    /* overflow: hidden; */
+    text-decoration: none;
 }
 
 /* Login Button Text */
-#loginButton span, #registerButton span {
-    color:#777777;
+#loginButton span, #registerButton span, #logoutButton span {
+    color:#ffffff;
     font-size:14px; 
     font-weight:bold; 
-    text-shadow:1px 1px #fff;
-    padding:7px 29px 9px 10px;
-    background:url(../images/loginArrow.png) no-repeat 53px 7px;
+    text-shadow:1px 1px #303030;
+    /* padding:0px 29px 0px 10px; */
     display:block;
 }
 
@@ -91,8 +57,8 @@
     padding-left: 0px;
 }
 
-#loginButton:hover span, #registerButton:hover span{
-    color:#333333;
+#loginButton:hover span, #registerButton:hover span, #logoutButton:hover span{
+    color:#a0a0a0;
 }
 
 #loginButton.active span, #registerButton.active span {
@@ -102,12 +68,11 @@
 /* Login Box */
 #loginBox, #registerBox {
     position:absolute;
-    top:30px;
-    right:0;
+    top:40px;
+    right:20px;
     display:none;
     z-index:1;
 }
-
 
 /* Login Form */
 #loginForm, #registerForm {
@@ -184,7 +149,6 @@ fieldset#body {
 input:focus {
     outline:none;
 }
-
 
 /*------- Firebase Login / Register End -------*/
 
