@@ -1,71 +1,161 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YodaQuoBot</title>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0 , minimum-scale=1.0 , user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    
-    
-    
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css"/>    
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/login.css" />
-    
-    
-    
+  <link href="favicon.ico" rel="shortcut icon">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Major+Mono+Display|Source+Sans+Pro" rel="stylesheet">
+  
+  <!-- Bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css"/>  
+  <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/login.css"/>
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
+
+  
 </head>
 <body>
-    <div id="container">
-        <div id="loginContainer">
-            <a href="#" id="loginButton"><span>Login</span><em></em></a>
-            <div style="clear:both"></div>
-            <div id="loginBox">                
-                <form id="loginForm">
-                    <fieldset id="body">
-                        <fieldset>
-                            <label for="email">Email Address</label>
-                            <input type="text" name="email" id="email" />
-                        </fieldset>
-                        <fieldset>
-                            <label for="password">Password</label>
-                            <input type="password" name="password" id="password" />
-                        </fieldset>
-                        <input type="submit" id="login" value="Sign in" />
-                    </fieldset>
-                </form>
+
+    <!-- Main Wrapper-->
+    <div class="container" id="mainWrapper">
+
+        <!-- Top Navbar-->
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar navbar-brand navbar-left" href="#">
+                <img src="./assets/images/yoda-120-227445.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                YodaQuoBot
+            </a>
+            <ul class="navbar navbar-right">
+                <li>
+                    <div id="loginContainer">
+                        <a href="#" id="loginButton"><span>Login</span></a>
+                        <div style="clear:both"></div>
+                        <div id="loginBox">                
+                            <form id="loginForm">
+                                <fieldset id="body">
+                                    <fieldset>
+                                        <label for="email">Email Address</label>
+                                        <input type="text" name="email" id="email" />
+                                    </fieldset>
+                                    <fieldset>
+                                        <label for="password">Password</label>
+                                        <input type="password" name="password" id="password" />
+                                    </fieldset>
+                                    <input type="submit" id="login" value="Sign in" />
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div id="registerContainer">
+                        <a href="#" id="registerButton"><span>Register</span><em></em></a>
+                        <div style="clear:both"></div>
+                        <div id="registerBox">                
+                            <form id="registerForm">
+                                <fieldset id="body">
+                                    <fieldset>
+                                        <label for="emailRegister">Email Address</label>
+                                        <input type="text" name="emailRegister" id="emailRegister" />
+                                    </fieldset>
+                                    <fieldset>
+                                        <label for="passwordRegister">Password</label>
+                                        <input type="password" name="passwordRegister" id="passwordRegister" />
+                                    </fieldset>
+                                    <input type="submit" id="register" value="Register" />
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="logoutContainer">
+                        <div id="userName"></div>
+                        <a href="#" id="logoutButton"><span>Logout</span><em></em></a>
+                    </div>
+                </li>
+            </ul>    
+        </nav>
+        <!-- Top Navbar End -->
+
+        <!-- Main Content-->
+        <div class="jumbotron text-center">
+        <p>I am an inspirational quote generator dedicated to preserving the language of the beloved Jedi Master, Yoda.</p>
+        <p>Use suggested author quotes or search randomly,  see a translation into Yoda speak: his unique snappy way of turning a phrase.</p>
+        </div>
+        <div class ="container">
+            <h2>Favorites</h2>
+            <div id="favoritesContainer">
+                <table class="table" id="favoriteQuotes">
+                    <thead class="thead-dark">
+                        <tr>
+                        <th class="thAthor">Author</th>
+                        <th>Quote</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Gets filled dynamically -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="nofavoritesContainer">
+                <p class="red">Login to access your favorite quotes!</p>
+            </div>
+            <br>
+        </div>
+
+        <div class="container">
+            <h2>Categories</h2>
+            <div class="table-responsive">
+                <table class="table" id="quoteCategories">
+                    <!-- Gets filled dynamically -->
+                </table>
             </div>
         </div>
-        <div id="registerContainer">
-            <a href="#" id="registerButton"><span>Register</span><em></em></a>
-            <div style="clear:both"></div>
-            <div id="registerBox">                
-                <form id="registerForm">
-                    <fieldset id="body">
-                        <fieldset>
-                            <label for="emailRegister">Email Address</label>
-                            <input type="text" name="emailRegister" id="emailRegister" />
-                        </fieldset>
-                        <fieldset>
-                            <label for="passwordRegister">Password</label>
-                            <input type="password" name="passwordRegister" id="passwordRegister" />
-                        </fieldset>
-                        <input type="submit" id="register" value="Register" />
-                    </fieldset>
-                </form>
+        <div class="container" id="quoteBoxes">
+            <div class="row fullHeight" >
+                <div class="col-md-6 box" id="authorImage">
+                    <div class="row" id="textBox">
+                        <div class="col-md-12">
+                            <div class="row" id="authorName"></div>
+                            <div class="row" id="authorQuote"></div>
+                            <button class="btn btn-default btn-lg favButton" id="favoriteButton">Add to Favorites</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 box" id=yodaImage>
+                    <div class="row" id="textBox">
+                        <div class="col-md-12">
+                            <div class="row" id="yoda">Yoda</div>
+                            <div class="row" id="yodaQuote"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="logoutContainer">
-        <div id="userName"></div>
-        <a href="#" id="logoutButton"><span>Logout</span><em></em></a>
         <br>
-    </div>
-    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+        <!-- Main Content End -->
+
+        <!-- Footer -->
+        <footer class="container-fluid text-center">
+                <a href="#Yodabot" title="To Top">
+                <span class="glyphicon glyphicon-chevron-up" style="color:aliceblue;"></span>
+                </a>
+    
+        </footer>
+
+    </div><!-- Main Wrapper End -->
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
     <script src="./assets/javascript/main.js"></script>
+
 </body>
 </html>
