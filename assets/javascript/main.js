@@ -23,7 +23,7 @@ function quotes(categoryName) {
         var quote = response.contents.quotes[0].quote;
 
         if (background == null) {
-            // ****** TASK Genereate random photo from list oh photos
+            background = path + "defaultQuote.jpg";
         }
         
         yoda(author, quote, background);
