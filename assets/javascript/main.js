@@ -7,7 +7,7 @@ var categories = ["inspire", "management", "sports", "life", "funny", "love", "a
 var yodaImages = ["yoda1.jpeg","yoda2.jpeg", "yoda3.jpeg", "yoda4.jpeg", "yoda5.jpeg", "yoda6.jpeg", "yoda7.jpeg"];// ****** TASK Create array of photos, find photos to use in case quote api does not provide us with a background
 
 var randomNum = Math.floor(Math.random() * yodaImages.length);
-
+console.log(randomNum);
 
 var uid;
 
