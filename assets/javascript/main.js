@@ -10,12 +10,13 @@ var uid;
 
 // Quote API
 function quotes(categoryName) {
-    var api = "http://quotes.rest/qod?"
+    var api = "https://quotes.rest/qod?"
     var type = "category="
 
-    var quotesCategories = api + type + categoryName;
+    var quotesURL = api + type + categoryName;
+    console.log(quotesURL);
     $.ajax({
-        url: quotesCategories,
+        url: quotesURL,
         method: "GET"
     }).then(function(response) {
         var author = response.contents.quotes[0].author;
@@ -48,7 +49,7 @@ function yoda(author, quote, background) {
             $("#authorImage").css("background-image", "url("+ background +")");
             
             
-            console.log("Yoda: " + yodaText);
+            // console.log("Yoda: " + yodaText);
         });
     }
     catch(error) {
