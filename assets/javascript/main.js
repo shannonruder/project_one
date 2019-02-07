@@ -4,7 +4,15 @@ var path = "./assets/images/";
 
 var categories = ["inspire", "management", "sports", "life", "funny", "love", "art", "students"];
 
-var yodaImages = ["yoda1.jpeg"];// ****** TASK Create array of photos, find photos to use in case quote api does not provide us with a background
+var yodaImages = ["yoda1.jpeg","yoda2.jpeg", "yoda3.jpeg", "yoda4.jpeg", "yoda5.jpeg", "yoda6.jpeg"];// ****** TASK Create array of photos, find photos to use in case quote api does not provide us with a background
+
+var quoteBoxImages = ["inspireImage1.jpeg","inspireImage2.jpeg", "inspireImage3.jpeg", "inspireImage4.jpeg", "inspireImage5.jpeg", "inspireImage6.jpeg", "inspireImage7.jpeg"]
+
+var yodaRandom = Math.floor(Math.random() * yodaImages.length);
+console.log(yodaRandom);
+
+var quoteBoxRandom = Math.floor(Math.random() * quoteBoxImages.length);
+console.log(quoteBoxRandom);
 
 var uid;
 
@@ -22,8 +30,8 @@ function quotes(categoryName) {
         var background = response.contents.quotes[0].background;
         var quote = response.contents.quotes[0].quote;
 
-        if (background == null) {
-            background = path + "defaultQuote.jpg";
+        if (background == null ) {
+            background = path + quoteBoxImages[quoteBoxRandom];
         }
         
         yoda(author, quote, background);
@@ -132,8 +140,9 @@ function InitializeWindow() {
         tableRow.append(tableItem);
         tableItem.append(categoriesButton);
         $("#quoteCategories").append(tableItem);
-
-        $("#yodaImage").css("background-image", "url(" + path + "yoda1.jpeg" +")");
+        
+        $("#authorImage").css("background-image", "url(" + path + quoteBoxImages[quoteBoxRandom] +")");
+        $("#yodaImage").css("background-image", "url(" + path + yodaImages[yodaRandom] +")");
     }
 }
 
