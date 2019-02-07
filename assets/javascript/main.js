@@ -6,7 +6,12 @@ var categories = ["inspire", "management", "sports", "life", "funny", "love", "a
 
 var yodaImages = ["yoda1.jpeg","yoda2.jpeg", "yoda3.jpeg", "yoda4.jpeg", "yoda5.jpeg", "yoda6.jpeg"];// ****** TASK Create array of photos, find photos to use in case quote api does not provide us with a background
 
+var quoteBoxImages = ["inspireImage1.jpeg","inspireImage2.jpeg", "inspireImage3.jpeg", "inspireImage4.jpeg", "inspireImage5.jpeg", "inspireImage6.jpeg", "inspireImage7.jpeg"]
+
 var randomNum = Math.floor(Math.random() * yodaImages.length);
+console.log(randomNum);
+
+var randomNum2 = Math.floor(Math.random() * quoteBoxImages.length);
 console.log(randomNum);
 
 var uid;
@@ -25,8 +30,8 @@ function quotes(categoryName) {
         var background = response.contents.quotes[0].background;
         var quote = response.contents.quotes[0].quote;
 
-        if (background == null) {
-            background = path + "defaultQuote.jpg";
+        if (background == null ) {
+            background = path + quoteBoxImages[randomNum2];
         }
         
         yoda(author, quote, background);

@@ -11,10 +11,11 @@
 
   <!-- Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Major+Mono+Display|Source+Sans+Pro" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Roboto|Source+Sans+Pro" rel="stylesheet">
   <!-- Reset CSS -->
   <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/reset.css"/>
+  <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
   <!-- Bootstrap -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <!-- CSS -->
@@ -32,7 +33,7 @@
         <nav class="navbar navbar-dark bg-dark">
             <a class="navbar navbar-brand navbar-left" href="#">
                 <img src="./assets/images/yoda-120-227445.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                YodaQuo
+                &nbsp YodaQuo
             </a>
             <ul class="navbar navbar-right">
                 <li>
@@ -86,33 +87,14 @@
         <!-- Top Navbar End -->
 
         <!-- Main Content-->
-        <div class="jumbotron text-center">
-        <p>This is an inspirational quote generator dedicated to preserving the language of the beloved Jedi Master, Yoda.</p>
-        <p>Use suggested author quotes or search randomly,  see a translation into Yoda speak: his unique snappy way of turning a phrase.</p>
-        </div>
-        <div class ="container">
-            <h2>Favorites</h2>
-            <div id="favoritesContainer">
-                <table class="table" id="favoriteQuotes">
-                    <thead class="thead-dark">
-                        <tr>
-                        <th class="thAthor">Author</th>
-                        <th>Quote</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Gets filled dynamically -->
-                    </tbody>
-                </table>
-            </div>
-            <div id="nofavoritesContainer">
-                <p class="red">Login to access your favorite quotes!</p>
-            </div>
-            <br>
+        <div class="jumbotron text-center" style="background-color:rgb(0, 0, 0, .6);color:white;">
+        <p class="yodaquo-text-body">YodaQuo is an inspirational quote generator dedicated to preserving the language of the beloved Jedi Master, Yoda.<br>
+
         </div>
 
+
         <div class="container">
-            <h2>Categories</h2>
+              <h2>Quote Categories</h2>
             <div class="table-responsive">
                 <table class="table" id="quoteCategories">
                     <!-- Gets filled dynamically -->
@@ -124,8 +106,9 @@
                 <div class="col-md-6 box" id="authorImage">
                     <div class="row" id="textBox">
                         <div class="col-md-12">
-                            <div class="row" id="authorName"></div>
                             <div class="row" id="authorQuote"></div>
+                            <br>
+                            <div class="row" id="authorName"><strong></strong></div>
                             <button class="btn btn-default btn-lg favButton" id="favoriteButton">Add to Favorites</button>
                         </div>
                     </div>
@@ -133,23 +116,63 @@
                 <div class="col-md-6 box" id=yodaImage>
                     <div class="row" id="textBox">
                         <div class="col-md-12">
-                            <div class="row" id="yoda">Yoda</div>
                             <div class="row" id="yodaQuote"></div>
+                            <br>
+                            <div class="row" id="yoda"><strong>Yoda</strong></div>
                         </div>
                     </div>
                 </div>
+                
+
+        <div class ="container">
+               
+                <h2>Favorites</h2>
+                <div id="favoritesContainer">
+                    <table class="table" id="favoriteQuotes">
+                        <thead class="thead-dark">
+                            <tr>
+                            <th class="thAthor">Author</th>
+                            <th>Quote</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Gets filled dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="nofavoritesContainer">
+                        <span class="glyphicon glyphicon-envelope" style="color:aliceblue;"></span>
+                    <h2 class="yodaquo-text-body">Login to access your favorite quotes here.</h2>
+                </div>
+                <br>
             </div>
+            </div>
+    
         </div>
         <br>
-        <!-- Main Content End -->
 
+        <!-- Testing Facebook & Twitter share -->
+
+        <div class="button-wrapper download-share">
+                <div id="share-buttons">
+                <a href="" class="share-on-twitter">
+                <img src="assets/images/twitter.png" alt="Twitter" />
+                </a>
+                <a href="" class="share-on-facebook">
+                <img src="assets/images/facebook.png" alt="Facebook" />
+                </a>
+         </div>
+        
+        <!-- End Testing Facebook & Twitter share -->
         <!-- Footer -->
+        <div class="row">
         <footer class="container-fluid text-center">
-                <a href="#Yodabot" title="To Top">
+                <a href="#YodaQuo" title="To Top">
                 <span class="glyphicon glyphicon-chevron-up" style="color:aliceblue;"></span>
                 </a>
     
         </footer>
+        </div>
 
     </div><!-- Main Wrapper End -->
 
