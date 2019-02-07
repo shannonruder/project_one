@@ -29,8 +29,7 @@ body{
 }
 
 .jumbotron { 
-  font-family: 400 15 px 'Source Sans Pro', sans-serif;
-  /* font-family: 'Archivo Black', sans-serif; */
+  font-family: 'Source Sans Pro', sans-serif; 
   padding: 12px;
 }
 
