@@ -2,7 +2,7 @@
 /********** Main Structure **********/
 
 body{
-    font-family: 400 15 px 'Source Sans Pro', sans-serif;
+    /* font-family: 400 15 px 'Source Sans Pro', sans-serif; */
     line-height: 1.8;
     text-align: left;
     background: url("../images/background.gif") no-repeat center center;
@@ -13,8 +13,14 @@ body{
     background-size: cover;
 }
 
+
+.navbar .navbar-dark .bg-dark {
+  color: #0000;
+}
+
 #mainWrapper {
-  background-color: #ffffff;
+  background-color:white;
+/* background-color: rgb(0, 0, 0, .7); */
 }
 
 .container {
@@ -23,32 +29,46 @@ body{
 }
 
 .jumbotron { 
-  font-family: 'Archivo Black', sans-serif;
-  padding: 20px;
+  font-family: 'Source Sans Pro', sans-serif; 
+  padding: 12px;
 }
 
 h2 {
-  font-size: 24px;
+  text-align: center;
+  font-size: .7em;
   text-transform: uppercase;
-  color: #303030;
+  color:#cc0000;
+  letter-spacing: 3px;
+  /* color: #303030; */
   font-weight: 600;
 }
 
 h4 {
-  font-size: 19px;
-  color: #303030;
+  font-size: 14px;
+  color:#ffffff;
+  letter-spacing: 1px;
+  /* color: #303030; */
   font-weight: 400;
 }
 
-p {
-  font-family: 'Archivo', sans-serif;
-  font-size: 16px !important;
+
+.yodaquo-text-body {
+  /* color:#f9f9f9; */
+  font-size: 14px !important;
+  letter-spacing: 1px;
 }
 
 .red {
-color: red;
+  /* color: #8e44ad; */
+color: #cc0000;
 }
 
+img {
+  vertical-align: middle;
+}
+
+/* remove rounding from cards, buttons, jumbotron and inputs */
+.card, .btn, .form-control,.navbar .navbar-dark .bg-dark,.jumbotron { border-radius: 0; }
 /********** Main Structure End **********/
 
 
@@ -71,7 +91,67 @@ color: red;
 
 /********** Categories **********/
 
-.categoriesButton {
+/* .categoriesButton { */
+  .categoriesButton {
+    
+    box-sizing: border-box;
+    appearance: none;
+    background-color: #666666;
+    border: 2px solid #99ff66;
+    border-radius: 0.6em;
+    color: #99ff66;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: .8rem;
+    font-weight: 300;
+    line-height: 1;
+    margin: 5px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    border-color: #99ff66;
+    border-radius: 0;
+    color: #99ff66;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 150ms ease-in-out;
+  }
+    .categoriesButton:after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 100%;
+      background: #8e44ad;
+      z-index: -1;
+      transition: width 150ms ease-in-out;
+    }
+    
+  .categoriesButton:hover {
+      color: #333300;
+  }
+  .categoriesButton:after {
+        width: 110%;
+  }
+    
+  
+  
+  .categoriesButton:hover, .categoriesButton:focus {
+      color: #fff;
+      outline: 0;
+  }
+  
+  
+  /*  
+  .categoriesButton {
 	-moz-box-shadow: 0px 10px 14px -7px #3e7327;
 	-webkit-box-shadow: 0px 10px 14px -7px #3e7327;
 	box-shadow: 0px 10px 14px -7px #3e7327;
@@ -109,15 +189,23 @@ color: red;
 	background-color:#72b352;
 }
 
-.categoriesButton:active {
+.categoriesButton:active { 
 	position:relative;
-	top:1px;
+	top:1px; 
 }
-
+ */
 /********** Categories End **********/
 
 
 /********** Quotes **********/
+
+#quoteCategories{
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* justify-content: space-around; */
+  align-items: center;
+  align-content: center;
+}
 
 #authorQuote, #yodaQuote {
   text-align: left;
@@ -145,9 +233,9 @@ color: red;
 }
 
 #textBox {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
   color: #c3c4af;
-  min-height: 50px;
+  min-height: 60px;
   z-index: 2;
   padding: 10px;
 }
@@ -156,6 +244,10 @@ color: red;
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
+}
+
+#loginButton, #registerButton {
+  text-transform: uppercase;
 }
 
 /********** Quotes End **********/
