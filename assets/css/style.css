@@ -138,18 +138,18 @@ img {
     
   .categoriesButton:hover {
       color: #333300;
-      .categoriesButton:after {
-        width: 110%;
-      }
-    }
   }
+  .categoriesButton:after {
+        width: 110%;
+  }
+    
   
-  .categoriesButton:hover,
-  .categoriesButton:focus {
+  
+  .categoriesButton:hover, .categoriesButton:focus {
       color: #fff;
       outline: 0;
-    }
   }
+  
   
   /*  
   .categoriesButton {
@@ -202,8 +202,8 @@ img {
 
 #quoteCategories{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  /* flex-wrap: wrap; */
+  /* justify-content: space-around; */
   align-items: center;
   align-content: center;
 }

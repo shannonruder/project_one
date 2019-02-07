@@ -8,11 +8,11 @@ var yodaImages = ["yoda1.jpeg","yoda2.jpeg", "yoda3.jpeg", "yoda4.jpeg", "yoda5.
 
 var quoteBoxImages = ["inspireImage1.jpeg","inspireImage2.jpeg", "inspireImage3.jpeg", "inspireImage4.jpeg", "inspireImage5.jpeg", "inspireImage6.jpeg", "inspireImage7.jpeg"]
 
-var randomNum = Math.floor(Math.random() * yodaImages.length);
-console.log(randomNum);
+var yodaRandom = Math.floor(Math.random() * yodaImages.length);
+console.log(yodaRandom);
 
-var randomNum2 = Math.floor(Math.random() * quoteBoxImages.length);
-console.log(randomNum);
+var quoteBoxRandom = Math.floor(Math.random() * quoteBoxImages.length);
+console.log(quoteBoxRandom);
 
 var uid;
 
@@ -31,7 +31,7 @@ function quotes(categoryName) {
         var quote = response.contents.quotes[0].quote;
 
         if (background == null ) {
-            background = path + quoteBoxImages[randomNum2];
+            background = path + quoteBoxImages[quoteBoxRandom];
         }
         
         yoda(author, quote, background);
@@ -140,8 +140,9 @@ function InitializeWindow() {
         tableRow.append(tableItem);
         tableItem.append(categoriesButton);
         $("#quoteCategories").append(tableItem);
-
-        $("#yodaImage").css("background-image", "url(" + path + yodaImages[randomNum] +")");
+        
+        $("#authorImage").css("background-image", "url(" + path + quoteBoxImages[quoteBoxRandom] +")");
+        $("#yodaImage").css("background-image", "url(" + path + yodaImages[yodaRandom] +")");
     }
 }
 
