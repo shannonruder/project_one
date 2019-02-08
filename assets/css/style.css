@@ -104,28 +104,28 @@ ul#list-nav li {
   display : inline;
   width : 50%;
   height : 33px;;
-  background-color : #656565;
+  background-color : #6c34ab;
 }
 
 ul#list-nav li a {
   text-decoration : none;
   padding : 4px 0;
   width : 50%;
-  background : #656565;
+  background : #b68a#6c34ab;
   color : #eee;
   float : left;
   text-align : center;
 }
 
 ul#list-nav li a:hover {
-  background : #999;
+  background : #b68ae8;
   color : #fff;
   font-family:'Source Sans Pro', sans-serif;
   text-transform: uppercase;
 }
 
 ul#list-nav li a:active {
-  background : #999;
+  background : #b68ae8;
   color : #fff;
   font-family:'Source Sans Pro', sans-serif;
   text-transform: uppercase;
@@ -174,7 +174,7 @@ ul#list-nav li a:active {
     font-family:'Source Sans Pro', sans-serif;
     font-weight: 900;
     border-radius: 0;
-    border-color: #656565;
+    border-color: #b68ae8;
     color: #ffffff;
     position: relative;
     overflow: hidden;
@@ -196,7 +196,7 @@ ul#list-nav li a:active {
     }
     
   .categoriesButton:hover {
-      color: #333300;
+      color: #b68ae8;
   }
   .categoriesButton:after {
         width: 110%;
@@ -204,7 +204,7 @@ ul#list-nav li a:active {
     
   
   .categoriesButton:hover, .categoriesButton:focus {
-      color:#000000;
+      color:#b68ae8;
       background-color:#ffffff;
       outline: 0;
   }
