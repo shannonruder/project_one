@@ -105,7 +105,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 // yoda button
 
             );
-            // how the fuck does it come out in yodish 
+             
 
             // Append the new row to the table
             $("#favoriteQuotes > tbody").append(newRow); 
@@ -143,9 +143,20 @@ var getAuthor = "";
 });
 
 // delete button 
-$(document).on("click", ".1btn", function(event) {
+$("#favoriteQuotes").on('click', '.deleteButton', function () {
+    $(this).closest('tr').remove();
+    
+        
+                var getfavoriteQuote = firebase.database().ref(uid);
+                getFavoriteQuote.remove()
+            }
+            )
+    
 
-// Clear
+    // database.ref(uid).push({
+  
+
+// // Clear
 
 function clear() {
     localStorage.clear();
@@ -271,4 +282,5 @@ $("#logoutButton").on("click", function(event) {
 window.onload = function() {
     InitializeWindow();
 }
-})
+     
+  
