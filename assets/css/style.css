@@ -88,68 +88,68 @@ img {
 }
 /********** Favorites End **********/
 
-
+ul, li {
+  display: inline-block;
+}
 /********** Categories **********/
 
 /* .categoriesButton { */
-  .categoriesButton {
-    
-    box-sizing: border-box;
-    appearance: none;
-    background-color: #666666;
-    border: 2px solid #99ff66;
-    border-radius: 0.6em;
-    color: #99ff66;
-    cursor: pointer;
-    display: flex;
-    align-self: center;
-    font-size: .8rem;
-    font-weight: 300;
-    line-height: 1;
-    margin: 5px;
-    padding: 1.2em 2.8em;
-    text-decoration: none;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    border-color: #99ff66;
-    border-radius: 0;
-    color: #99ff66;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    transition: color 150ms ease-in-out;
-  }
-    .categoriesButton:after {
-      content: '';
-      position: absolute;
-      display: block;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 100%;
-      background: #8e44ad;
-      z-index: -1;
-      transition: width 150ms ease-in-out;
-    }
-    
-  .categoriesButton:hover {
-      color: #333300;
-  }
-  .categoriesButton:after {
-        width: 110%;
-  }
-    
+
+.categoriesButton {
+	font-weight:bold;
+	text-decoration:none;
+	font-family:Arial;
+	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
+	o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
+	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
+	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
+	background:#446835;
+	background:-o-linear-gradient(90deg, #446835, #8bbf71);
+	background:-moz-linear-gradient( center top, #446835 5%, #8bbf71 100% );
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #446835), color-stop(1, #8bbf71) );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#446835', endColorstr='#8bbf71');
+	background:-webkit-linear-gradient(#446835, #8bbf71);
+	background:-ms-linear-gradient(#446835, #8bbf71);
+	background:linear-gradient(#446835, #8bbf71);
+	
+	margin: 10px;
+	-moz-border-radius:25px 0 25px 0;
+	-webkit-border-radius:25px 0 25px 0;
+	border-radius:25px 0 25px 0;
+	text-align:center;
+	vertical-align:middle;
+	display:inline-block;
+	font-size:16px;
+	color:#deddc9;
+	width:150px;
+	height:40px;
+	padding: 5px;
+	border-color:#97937c;
+	border-width:2px;
+	border-style:solid;
+}
+
+.categoriesButton:active {
+	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
+	o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
+	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
+	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
+	position:relative;
+	top:3px
+}
+
+.categoriesButton:hover {
+	background:#8bbf71;
+	background:-o-linear-gradient(90deg, #8bbf71, #446835);
+	background:-moz-linear-gradient( center top, #8bbf71 5%, #446835 100% );
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8bbf71), color-stop(1, #446835) );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8bbf71', endColorstr='#446835');
+	background:-webkit-linear-gradient(#8bbf71, #446835);
+	background:-ms-linear-gradient(#8bbf71, #446835);
+	background:linear-gradient(#8bbf71, #446835);
+}
   
-  
-  .categoriesButton:hover, .categoriesButton:focus {
-      color: #fff;
-      outline: 0;
-  }
-  
-  
+
   /*  
   .categoriesButton {
 	-moz-box-shadow: 0px 10px 14px -7px #3e7327;
@@ -200,11 +200,11 @@ img {
 /********** Quotes **********/
 
 #quoteCategories{
-  display: flex;
+  /* display: flex; */
   /* flex-wrap: wrap; */
   /* justify-content: space-around; */
-  align-items: center;
-  align-content: center;
+  /* align-items: center;
+  align-content: center; */
 }
 
 #authorQuote, #yodaQuote {
@@ -248,6 +248,12 @@ img {
 
 #loginButton, #registerButton {
   text-transform: uppercase;
+}
+
+.jumbotron {
+  
+  background-color:#97937C;
+  color:white;
 }
 
 /********** Quotes End **********/
