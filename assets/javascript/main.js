@@ -6,13 +6,17 @@ var categories = ["inspire", "management", "sports", "life", "funny", "love", "a
 
 var yodaImages = ["yoda1.jpeg","yoda2.jpeg", "yoda3.jpeg", "yoda4.jpeg", "yoda5.jpeg", "yoda6.jpeg"];// ****** TASK Create array of photos, find photos to use in case quote api does not provide us with a background
 
-var quoteBoxImages = ["inspireImage1.jpeg","inspireImage2.jpeg", "inspireImage3.jpeg", "inspireImage4.jpeg", "inspireImage5.jpeg", "inspireImage6.jpeg", "inspireImage7.jpeg"]
+// var quoteBoxImages = ["inspireImage1.jpeg","inspireImage2.jpeg", "inspireImage3.jpeg", "inspireImage4.jpeg", "inspireImage5.jpeg", "inspireImage6.jpeg", "inspireImage7.jpeg"]
+
+var quoteImage = "defaultQuote.jpg";
 
 var yodaRandom = Math.floor(Math.random() * yodaImages.length);
 console.log(yodaRandom);
 
-var quoteBoxRandom = Math.floor(Math.random() * quoteBoxImages.length);
-console.log(quoteBoxRandom);
+// var quoteBoxRandom = Math.floor(Math.random() * quoteBoxImages.length);
+// console.log(quoteBoxRandom);
+
+var quote;
 
 var uid;
 
@@ -21,29 +25,49 @@ function quotes(categoryName) {
     var api = "https://quotes.rest/qod?"
     var type = "category="
 
-    var quotesURL = api + type + categoryName;
+    var quotesURL = api + type + categoryName.toLowerCase();
     console.log(quotesURL);
-    $.ajax({
-        url: quotesURL,
-        method: "GET"
-    }).then(function(response) {
-        var author = response.contents.quotes[0].author;
-        var background = response.contents.quotes[0].background;
-        var quote = response.contents.quotes[0].quote;
+    
 
-        if (background == null ) {
-            background = path + quoteBoxImages[quoteBoxRandom];
-        }
-        
-        yoda(author, quote, background);
-    });
+    yodaRandom = Math.floor(Math.random() * yodaImages.length);
+    $("#yodaImage").css("background-image", "url(" + path + yodaImages[yodaRandom] +")");
+
+    try {
+        $.ajax({
+            url: quotesURL,
+            method: "GET"
+        }).then(function(response) {
+            var author = response.contents.quotes[0].author;
+            var backgroundQuote = response.contents.quotes[0].background;
+            var quote = response.contents.quotes[0].quote;
+
+
+            console.log(author);
+            console.log(quote);
+
+            if (backgroundQuote == null ) {
+                backgroundQuote = path + quoteImage;
+            }
+            
+
+            yoda(author, quote, backgroundQuote);
+        });
+    }
+    catch(error) {
+        console.log(error);
+    }
+    // if (quote==null) {
+    //     author = "A message from the Team";
+    //     quote = "Inspiring quote reserves are running low. Try creating your own!"; 
+    //     yoda(author, quote, null);
+    // }
 }
 
 // Yoda API
-function yoda(author, quote, background) {
-    try{    
-        // var test = "Hello my name is Aris";
-        var yodaURL = "https://api.funtranslations.com/translate/yoda.json?text=" + quote;
+function yoda(author, quote, backgroundQuote) {
+    
+    var yodaURL = "https://api.funtranslations.com/translate/yoda.json?text=" + quote;
+    try{
         $.ajax({
             url: yodaURL,
             method: "GET"
@@ -54,11 +78,10 @@ function yoda(author, quote, background) {
             $("#authorName").text(author);
             $("#authorQuote").text(quote);
             $("#yodaQuote").text(yodaText);
-            $("#authorImage").css("background-image", "url("+ background +")");
+            $("#authorImage").css("background-image", "url(" + backgroundQuote +")");
             
-            
-            // console.log("Yoda: " + yodaText);
         });
+        
     }
     catch(error) {
         console.log(error)
@@ -135,6 +158,7 @@ function InitializeWindow() {
         // var tableRow =  $("<tr>");
         var tableItem = $("<li>");
         var categoriesButton = $("<button>");
+        categoriesButton.css("outline", "0");
         categoriesButton.addClass("categoriesButton");
         categoriesButton.attr("id", i);
         categoriesButton.text(categories[i].toUpperCase());
@@ -142,7 +166,7 @@ function InitializeWindow() {
         tableItem.append(categoriesButton);
         $("#quoteCategories").append(tableItem);
         
-        $("#authorImage").css("background-image", "url(" + path + quoteBoxImages[quoteBoxRandom] +")");
+        $("#authorImage").css("background-image", "url(" + path + quoteImage +")");
         $("#yodaImage").css("background-image", "url(" + path + yodaImages[yodaRandom] +")");
     }
 }
