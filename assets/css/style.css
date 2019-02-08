@@ -162,7 +162,7 @@ footer hr {
   text-decoration:none;
   text-transform: uppercase;
 	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
-	o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
+	/* o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px; */
 	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
 	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
 	background:#537f41;
@@ -190,7 +190,7 @@ footer hr {
 
 #topnavleft:active {
 	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
-	o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
+	/* o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px; */
 	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
 	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
 	position:relative;
@@ -215,7 +215,7 @@ footer hr {
   text-decoration:none;
   text-transform: uppercase;
 	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
-	o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
+	/* o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px; */
 	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
 	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
 	background:#537f41;
@@ -243,7 +243,7 @@ footer hr {
 
 #topnavright:active {
 	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
-	o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
+	/* o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px; */
 	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
 	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
 	position:relative;
@@ -296,7 +296,7 @@ ul, li {
   font-weight: 700;
 	text-decoration:none;
 	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
-	o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
+	/* o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px; */
 	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
 	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
 	background:#537f41;
@@ -327,7 +327,7 @@ ul, li {
 
 .categoriesButton:active {
 	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
-	o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
+	/* o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px; */
 	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
 	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
 	position:relative;
@@ -350,14 +350,14 @@ ul, li {
 
 /********** Quotes **********/
 
-#quoteCategories{
+/* #quoteCategories{
 
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  /* justify-content: space-around; */
-  /* align-items: center;
-  align-content: center; */
-}
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+} */
 
 #authorQuote, #yodaQuote {
   text-align: left;
