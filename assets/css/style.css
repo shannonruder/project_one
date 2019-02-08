@@ -69,6 +69,10 @@ img {
 
 /* remove rounding from cards, buttons, jumbotron and inputs */
 .card, .btn, .form-control,.navbar .navbar-dark .bg-dark,.jumbotron { border-radius: 0; }
+
+#share-buttons {
+  padding-bottom : 1.2em;
+}
 /********** Main Structure End **********/
 
 
@@ -136,11 +140,13 @@ ul#list-nav li a:active {
 
 #nofavoritesContainer {
   display: block;
+  padding: 1.2em 2.8em;
 }
 
 #favoritesContainer {
   display: none;
   text-align: left;
+  padding: 1.2em 2.8em;
 }
 
 .thAthor {
