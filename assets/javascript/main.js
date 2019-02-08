@@ -100,8 +100,9 @@ firebase.auth().onAuthStateChanged(function(user) {
                 // button same class unique ID
                 
                 $("<td id='quote_" + getKey + "'>" ).text(getFavoriteQuote),
-                $("<button id='button_" + getKey + "' class='1btn' >").text("To Yoda")
-                // button same class unique ID
+                $("<button id='button_" + getKey + "' class='1btn' >").text("To Yoda"),
+                $("<button id='delete_" + getKey + "' class='deleteButton' >").text("Remove Favorite")
+                // yoda button
 
             );
             // how the fuck does it come out in yodish 
@@ -130,8 +131,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
 // yoda favorite button
-    
-
 $(document).on("click", ".1btn", function(event) {
 event.preventDefault();
 var key = this.id.split("button_")[1];
@@ -143,7 +142,8 @@ var getAuthor = "";
 
 });
 
-
+// delete button 
+$(document).on("click", ".1btn", function(event) {
 
 // Clear
 
@@ -219,7 +219,6 @@ $(document).on('click','.categoriesButton', function() {
     quotes(categoryName);
 });
 
-
     
 
 // On Click - Add to Favorite
@@ -272,5 +271,4 @@ $("#logoutButton").on("click", function(event) {
 window.onload = function() {
     InitializeWindow();
 }
-
-
+})
