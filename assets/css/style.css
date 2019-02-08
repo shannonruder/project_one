@@ -2,8 +2,10 @@
 /********** Main Structure **********/
 
 body{
-    /* font-family: 400 15 px 'Source Sans Pro', sans-serif; */
-    line-height: 1.8;
+		font-family: 'Source Sans Pro', sans-serif;
+		font-weight: 900;
+		font-size: 16px;
+    /* line-height: 1.8; */
     text-align: left;
     background: url("../images/background.gif") no-repeat center center;
     min-height: 100vh;
@@ -29,6 +31,8 @@ body{
 }
 
 .jumbotron { 
+	background-color:rgb(0, 0, 0, 0.6);
+  color:white;
   font-family: 'Source Sans Pro', sans-serif; 
   padding: 12px;
 }
@@ -154,123 +158,75 @@ ul#list-nav li a:active {
 }
 /********** Favorites End **********/
 
-
+ul, li {
+  display: inline-block;
+}
 /********** Categories **********/
 
-/* .categoriesButton { */
-  .categoriesButton {
-    
-    box-sizing: border-box;
-    appearance: none;
-    background-color:transparent;
-    border: 2px solid #656565;
-    border-radius: 0.12em;
-    color: #9a4ef1;
-    cursor: pointer;
-    display: flex;
-    align-self: center;
-    font-size: .8rem;
-    font-weight: 400;
-    line-height: 1;
-    margin:0 0.3em 0.3em 0;
-    padding: 1.2em 2.8em;
-    text-decoration: none;
-    text-align: center;
-    text-transform: uppercase;
-    font-family:'Source Sans Pro', sans-serif;
-    font-weight: 900;
-    border-radius: 0;
-    border-color: #b68ae8;
-    color: #ffffff;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    transition: color 150ms ease-in-out;
-  }
-    .categoriesButton:after {
-      content: '';
-      position: absolute;
-      display: block;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 100%;
-      background: #6c34ab;
-      z-index: -1;
-      transition: width 150ms ease-in-out;
-    }
-    
-  .categoriesButton:hover {
-      color: #b68ae8;
-  }
-  .categoriesButton:after {
-        width: 110%;
-  }
-    
-  
-  .categoriesButton:hover, .categoriesButton:focus {
-      color:#b68ae8;
-      background-color:#ffffff;
-      outline: 0;
-  }
-  
-  
-  /*  
-  .categoriesButton {
-	-moz-box-shadow: 0px 10px 14px -7px #3e7327;
-	-webkit-box-shadow: 0px 10px 14px -7px #3e7327;
-	box-shadow: 0px 10px 14px -7px #3e7327;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77b55a), color-stop(1, #72b352));
-	background:-moz-linear-gradient(top, #77b55a 5%, #72b352 100%);
-	background:-webkit-linear-gradient(top, #77b55a 5%, #72b352 100%);
-	background:-o-linear-gradient(top, #77b55a 5%, #72b352 100%);
-	background:-ms-linear-gradient(top, #77b55a 5%, #72b352 100%);
-	background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77b55a', endColorstr='#72b352',GradientType=0);
-	background-color:#77b55a;
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;
-	border-radius:4px;
-	border:1px solid #4b8f29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:13px;
-	font-weight:bold;
-	padding:6px 12px;
+.categoriesButton {
+	font-weight: 700;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #5b8a3c;
+	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
+	o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
+	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
+	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
+	background:#537f41;
+	background:-o-linear-gradient(90deg, #537f41, #75b25b);
+	background:-moz-linear-gradient( center top, #537f41 5%, #75b25b 100% );
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #537f41), color-stop(1, #75b25b) );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#537f41', endColorstr='#75b25b');
+	background:-webkit-linear-gradient(#537f41, #75b25b);
+	background:-ms-linear-gradient(#537f41, #75b25b);
+	background:linear-gradient(#537f41, #75b25b);
+	text-indent:0px;
+	-moz-border-radius:50px 0 50px 0;
+	-webkit-border-radius:50px 0 50px 0;
+	border-radius:50px 0 50px 0;
+	margin: 5px;
+	text-align:center;
+	vertical-align:middle;
+	display:inline-block;
+	font-size:16px;
+	color:#deddc9;
+	width:150px;
+	height:40px;
+	padding:5px;
+	border-color:#303023;
+	border-width:1px;
+	border-style:solid;
+}
+
+.categoriesButton:active {
+	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
+	o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
+	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
+	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
+	position:relative;
+	top:3px
 }
 
 .categoriesButton:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #72b352), color-stop(1, #77b55a));
-	background:-moz-linear-gradient(top, #72b352 5%, #77b55a 100%);
-	background:-webkit-linear-gradient(top, #72b352 5%, #77b55a 100%);
-	background:-o-linear-gradient(top, #72b352 5%, #77b55a 100%);
-	background:-ms-linear-gradient(top, #72b352 5%, #77b55a 100%);
-	background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#72b352', endColorstr='#77b55a',GradientType=0);
-	background-color:#72b352;
+	background:#75b25b;
+	background:-o-linear-gradient(90deg, #75b25b, #537f41);
+	background:-moz-linear-gradient( center top, #75b25b 5%, #537f41 100% );
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #75b25b), color-stop(1, #537f41) );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#75b25b', endColorstr='#537f41');
+	background:-webkit-linear-gradient(#75b25b, #537f41);
+	background:-ms-linear-gradient(#75b25b, #537f41);
+	background:linear-gradient(#75b25b, #537f41);
 }
 
-.categoriesButton:active { 
-	position:relative;
-	top:1px; 
-}
- */
 /********** Categories End **********/
 
 
 /********** Quotes **********/
 
 #quoteCategories{
-  display: flex;
+  /* display: flex; */
   /* flex-wrap: wrap; */
   /* justify-content: space-around; */
-  align-items: center;
-  align-content: center;
+  /* align-items: center;
+  align-content: center; */
 }
 
 #authorQuote, #yodaQuote {
@@ -315,6 +271,8 @@ ul#list-nav li a:active {
 #loginButton, #registerButton {
   text-transform: uppercase;
 }
+
+
 
 /********** Quotes End **********/
 

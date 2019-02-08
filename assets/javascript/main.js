@@ -132,13 +132,13 @@ function clear() {
 // Initialize Everything
 function InitializeWindow() {
     for (var i=0; i<categories.length; i++) {
-        var tableRow =  $("<tr>");
-        var tableItem = $("<td>");
+        // var tableRow =  $("<tr>");
+        var tableItem = $("<li>");
         var categoriesButton = $("<button>");
         categoriesButton.addClass("categoriesButton");
         categoriesButton.attr("id", i);
-        categoriesButton.text(categories[i]);
-        tableRow.append(tableItem);
+        categoriesButton.text(categories[i].toUpperCase());
+        // tableRow.append(tableItem);
         tableItem.append(categoriesButton);
         $("#quoteCategories").append(tableItem);
         
