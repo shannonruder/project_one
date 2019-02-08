@@ -87,15 +87,26 @@ firebase.auth().onAuthStateChanged(function(user) {
 
      
                  
+                        // Create the new row
+                        //add IDs to both getFavorite quote and yoda quote
+                        // hide yodaquote at start 
+                        // add button to each row ; adding actual quote isible by default and button is visible 4 items but only able to see 3
+                        // event listener to button that when its pressed changes display properties of either the yoda or the favorite 
+                
+
             var newRow = $("<tr>").append(
                 
                 $("<td id='author_" + getKey + "'>").text(getFavoriteAuthor),
                 // button same class unique ID
-                $("<button id='author_" + getKey + "' class='1btn' >").text("To Yoda")
+                
                 $("<td id='quote_" + getKey + "'>" ).text(getFavoriteQuote),
                 $("<button id='button_" + getKey + "' class='1btn' >").text("To Yoda")
                 // button same class unique ID
 
+            );
+            // how the fuck does it come out in yodish 
+
+            // Append the new row to the table
             $("#favoriteQuotes > tbody").append(newRow); 
                     
             

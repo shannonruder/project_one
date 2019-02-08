@@ -1,4 +1,4 @@
-// Quote API Categories
+/ Quote API Categories
 var path = "./assets/images/";
 
 var categories = ["inspire", "management", "sports", "life", "funny", "love", "art", "students"];
@@ -84,20 +84,51 @@ firebase.auth().onAuthStateChanged(function(user) {
             var getFavoriteQuote = childSnapshot.val().quote;
             var getKey = childSnapshot.key;
             
-
-     
-                 
-            var newRow = $("<tr>").append(
+            // var getFavoriteQuote = childSnapshot.val().response
+            //  document.getElementById("response");
+             
+             if (getFavoriteQuote){ 
                 
-                $("<td id='author_" + getKey + "'>").text(getFavoriteAuthor),
-                // button same class unique ID
-                $("<button id='author_" + getKey + "' class='1btn' >").text("To Yoda")
-                $("<td id='quote_" + getKey + "'>" ).text(getFavoriteQuote),
-                $("<button id='button_" + getKey + "' class='1btn' >").text("To Yoda")
-                // button same class unique ID
-
-            $("#favoriteQuotes > tbody").append(newRow); 
+                // $(document).on('click','#yodaFavButton', function() {
+                                    
+                // function getJSON() {
+                    var getFavoriteQuote = childSnapshot.val().quote;
+                    var yodaURL = "https://api.funtranslations.com/translate/yoda.json?text=" + getFavoriteQuote;
                     
+                    $.ajax({
+                        url: yodaURL,
+                        method: "GET"
+                    }).then(function(response) {
+                                                
+                        var yodaQuote = response.contents.translated;
+                        debugger
+                 
+                        // Create the new row
+                        //add IDs to both getFavorite quote and yoda quote
+                        // hide yodaquote at start 
+                        // add button to each row ; adding actual quote isible by default and button is visible 4 items but only able to see 3
+                        // event listener to button that when its pressed changes display properties of either the yoda or the favorite 
+                
+
+                        var newRow = $("<tr>").append(
+                            $("<td id='author_" + getKey + "'>").text(getFavoriteAuthor),
+
+
+                            $("<td>").text(getFavoriteQuote),
+                            $("<td>").text(yodaQuote)
+                        );
+            
+                        // Append the new row to the table
+                        $("#favoriteQuotes > tbody").append(newRow); 
+                    
+                    })
+                // }
+                // });
+            } else {
+                console.log(' failed to get yoda quote ');
+            }
+
+
             
         });
         $("#loginContainer").hide();        
@@ -116,22 +147,6 @@ firebase.auth().onAuthStateChanged(function(user) {
         $("#favoriteButton").hide();
     }
 });
-
-
-// yoda favorite button
-    
-
-$(document).on("click", ".1btn", function(event) {
-event.preventDefault();
-var key = this.id.split("button_")[1];
-var getFavoriteQuote = $("#quote_" + key).text();
-var getAuthor = "";
-    console.log(getFavoriteQuote);
-
-    yoda(getAuthor, getFavoriteQuote, null);
-
-});
-
 
 
 // Clear
@@ -209,8 +224,6 @@ $(document).on('click','.categoriesButton', function() {
 });
 
 
-    
-
 // On Click - Add to Favorite
 $(document).on('click','#favoriteButton', function() {
     var authorFavorite = $(authorName).text();
@@ -261,5 +274,7 @@ $("#logoutButton").on("click", function(event) {
 window.onload = function() {
     InitializeWindow();
 }
+
+
 
 
