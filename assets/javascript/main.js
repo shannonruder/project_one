@@ -1,4 +1,3 @@
-
 // Quote API Categories
 var path = "./assets/images/";
 
@@ -273,3 +272,5 @@ $("#logoutButton").on("click", function(event) {
 window.onload = function() {
     InitializeWindow();
 }
+
+
