@@ -1,4 +1,3 @@
-
 // Quote API Categories
 var path = "./assets/images/";
 
@@ -113,18 +112,37 @@ firebase.auth().onAuthStateChanged(function(user) {
         
         $("#userName").text(email);
         database.ref(uid).on("child_added", function(childSnapshot) {
-
+            
             var getFavoriteAuthor = childSnapshot.val().author;
             var getFavoriteQuote = childSnapshot.val().quote;
-            console.log(uid);
-            // Create the new row
-            var newRow = $("<tr>").append(
-                $("<td>").text(getFavoriteAuthor),
-                $("<td>").text(getFavoriteQuote),
-            );
+            var getKey = childSnapshot.key;
             
+
+     
+                 
+                        // Create the new row
+                        //add IDs to both getFavorite quote and yoda quote
+                        // hide yodaquote at start 
+                        // add button to each row ; adding actual quote isible by default and button is visible 4 items but only able to see 3
+                        // event listener to button that when its pressed changes display properties of either the yoda or the favorite 
+                
+
+            var newRow = $("<tr>").append(
+                
+                $("<td id='author_" + getKey + "'>").text(getFavoriteAuthor),
+                // button same class unique ID
+                
+                $("<td id='quote_" + getKey + "'>" ).text(getFavoriteQuote),
+                $("<button id='button_" + getKey + "' class='1btn' >").text("To Yoda"),
+                $("<button id='delete_" + getKey + "' class='deleteButton' >").text("Remove Favorite")
+                // yoda button
+
+            );
+             
+
             // Append the new row to the table
-            $("#favoriteQuotes > tbody").append(newRow);
+            $("#favoriteQuotes > tbody").append(newRow); 
+                    
             
         });
         $("#loginContainer").hide();        
@@ -145,7 +163,33 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 
-// Clear
+// yoda favorite button
+$(document).on("click", ".1btn", function(event) {
+event.preventDefault();
+var key = this.id.split("button_")[1];
+var getFavoriteQuote = $("#quote_" + key).text();
+var getAuthor = "";
+    console.log(getFavoriteQuote);
+
+    yoda(getAuthor, getFavoriteQuote, null);
+
+});
+
+// delete button 
+$("#favoriteQuotes").on('click', '.deleteButton', function () {
+    $(this).closest('tr').remove();
+    
+        
+                var getfavoriteQuote = firebase.database().ref(uid);
+                getFavoriteQuote.remove()
+            }
+            )
+    
+
+    // database.ref(uid).push({
+  
+
+// // Clear
 
 function clear() {
     localStorage.clear();
@@ -216,10 +260,25 @@ $(function() {
 
 
 
+
 $(document).on('click','#topnavleft', function() {
     var categoryName = $(this).text();
     quotes(categoryName);
 });
+
+
+
+//On Enter - Translate what is typed into textbox
+$("#userQuote").keypress(function(event) {
+    var keycode = event.keyCode || event.which;
+    if(keycode == '13') {
+        
+
+        yoda(null, $("#userQuote").val(), null);      
+    }
+});
+
+
 
 
 // On Click - Search for Category from Button
@@ -228,6 +287,7 @@ $(document).on('click','.categoriesButton', function() {
     quotes(categoryName);
 });
 
+    
 
 // On Click - Add to Favorite
 $(document).on('click','#favoriteButton', function() {
@@ -279,3 +339,5 @@ $("#logoutButton").on("click", function(event) {
 window.onload = function() {
     InitializeWindow();
 }
+     
+  
