@@ -78,6 +78,7 @@ function yoda(author, quote, backgroundQuote) {
             $("#authorName").text(author);
             $("#authorQuote").text(quote);
             $("#yodaQuote").text(yodaText);
+            $("#yoda").text("Yoda");
             $("#authorImage").css("background-image", "url(" + backgroundQuote +")");
             
         });
@@ -211,6 +212,13 @@ $(function() {
             box.hide();
         }
     });
+});
+
+
+
+$(document).on('click','#topnavleft', function() {
+    var categoryName = $(this).text();
+    quotes(categoryName);
 });
 
 
