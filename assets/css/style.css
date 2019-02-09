@@ -31,20 +31,34 @@ body{
   overflow: hidden;
 }
 
-#quoteBoxes {
+#containerButtonBar {
+	border-top: 1px solid #333333;
+	border-left: 1px solid #333333;
+  border-right: 1px solid #333333;
+	/* width : 310px; */
+  /* margin: 20px auto; */
+  /* height: 33px; */
+	text-decoration:none;
+	padding: 25px;
+}
+
+#containerCategories {
   border-left: 1px solid #333333;
   border-right: 1px solid #333333;
 }
 
 #containerFavorites {
-  border: 1px solid #333333;
+	border-left: 1px solid #333333;
+	border-right: 1px solid #333333;
+	border-bottom: 1px solid #333333;
 }
 
 .jumbotron { 
 	background-color:rgb(0, 0, 0, 0.6);
   color:white;
   font-family: 'Source Sans Pro', sans-serif; 
-  padding: 12px;
+	padding: 12px;
+	margin: 0;
 }
 
 h2 {
@@ -149,12 +163,6 @@ footer hr {
 /*********** MAKE YOUR OWN QUOTE/ QUOTE OF THE DAY  ************/
 /***********               BUTTON BAR               ************/
 
-#buttonbar {
-  width : 310px;
-  margin: 20px auto;
-  height: 33px;
-  text-decoration:none;
-}
 
 #topnavleft {
   font-weight: 700;
@@ -181,7 +189,7 @@ footer hr {
 	display:inline-block;
 	font-size:16px;
 	color:#deddc9;
-	width:153px;
+	width:155px;
 	height:40px;
 	border-color:#303023;
 	border-width:1px;
@@ -234,7 +242,7 @@ footer hr {
 	display:inline-block;
 	font-size:16px;
 	color:#deddc9;
-	width:153px;
+	width:155px;
 	height:40px;
 	border-color:#303023;
 	border-width:1px;
@@ -369,7 +377,8 @@ ul, li {
 }
 
 .fullHeight {
-  height: 100%;
+	height: 100%;
+	width: 100%;
 }
 
 #favoriteButton {
@@ -381,7 +390,7 @@ ul, li {
 .box {
   padding: 120px 75px 0px 75px;
   border: 1px solid #333333;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 #textBox {

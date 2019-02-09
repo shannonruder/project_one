@@ -77,6 +77,7 @@ function yoda(author, quote, backgroundQuote) {
             $("#authorName").text(author);
             $("#authorQuote").text(quote);
             $("#yodaQuote").text(yodaText);
+            $("#yoda").text("Yoda");
             $("#authorImage").css("background-image", "url(" + backgroundQuote +")");
             
         });
@@ -258,6 +259,15 @@ $(function() {
 });
 
 
+
+
+$(document).on('click','#topnavleft', function() {
+    var categoryName = $(this).text();
+    quotes(categoryName);
+});
+
+
+
 //On Enter - Translate what is typed into textbox
 $("#userQuote").keypress(function(event) {
     var keycode = event.keyCode || event.which;
@@ -267,6 +277,7 @@ $("#userQuote").keypress(function(event) {
         yoda(null, $("#userQuote").val(), null);      
     }
 });
+
 
 
 
