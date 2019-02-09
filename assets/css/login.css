@@ -32,6 +32,8 @@ input[type=text], input[type=password], textarea {
     font-weight:bold;
     font-size:12px;
     padding-top: 2px;
+    padding-right: 10px;
+    color:#777777;
 }
 
 #logoutButton:hover span{
@@ -78,7 +80,7 @@ input[type=text], input[type=password], textarea {
 }
 
 #loginButton:hover span, #registerButton:hover span{
-    color:#333333;
+    color:#646464;
 }
 
 /* Login Box */
