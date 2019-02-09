@@ -258,6 +258,18 @@ $(function() {
 });
 
 
+//On Enter - Translate what is typed into textbox
+$("#userQuote").keypress(function(event) {
+    var keycode = event.keyCode || event.which;
+    if(keycode == '13') {
+        
+
+        yoda(null, $("#userQuote").val(), null);      
+    }
+});
+
+
+
 // On Click - Search for Category from Button
 $(document).on('click','.categoriesButton', function() {
     var categoryName = $(this).text();
