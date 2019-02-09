@@ -19,6 +19,7 @@
   <!-- Bootstrap -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <!-- CSS -->
+  <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/animate.css"/>
   <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/login.css"/>
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>
 
@@ -89,6 +90,12 @@
                         <div id="userName"></div>
                         <a href="#" id="logoutButton"><span>Logout</span><em></em></a>
                     </div>
+                    <div id="errorLogin">
+                        Incorrect Email or Password!
+                    </div>
+                    <div id="errorRegister">
+                        Check your input!
+                    </div>
                 </li>
             </ul>    
         </nav>
@@ -101,49 +108,39 @@
 
         <!-- Main Content-->
 
-
+        
         <div class="container" id="containerButtonBar">
-
-                <ul id="list-nav">
-            
-                    <li><button id="topnavleft">Your Quote</button></li>
-            
-                    <li><button id="topnavright">Quote of the Day</button></li>
-            
-                </ul><!-- ul end list-nav -->
-            
-            </div><!-- div end navmenu -->
-
-
-        <div class="container" id="containerCategories">
-              <h2>Quote Categories</h2>
-            
-            <ul class="list-inline" id="quoteCategories">
-                    <!-- Gets filled dynamically -->
+            <ul id="list-nav">
+                <li><button id="topNavLeft">Your Quote</button></li>
+                <li><button id="topNavRight">Quote of the Day</button></li>
             </ul>
-            
         </div>
+        <div id="containerMenu">
+            <div class="container animated flipInX" id="containerCategories">
+                <h2>Quote Categories</h2>
+                <ul class="list-inline" id="quoteCategories">
+                        <!-- Gets filled dynamically -->
+                </ul>
+            </div>
 
-        <div class="form-group">
-            <h2>User Quote</h2>
-            <input class="form-control" rows="3" id="userQuote"></input>
-              </div>
+            <div class="container animated flipInX" id="containerUserQuote">
+                <h2>User Quote</h2>
+                <input class="form-control" rows="3" id="userQuote"></input>
+            </div>
         </div>
-        
-        
-        
-        
-        <div class="container" id="quoteBoxes">
+        <div id="quoteBoxes">
             <div class="row fullHeight" >
                 <div class="col-md-6 box" id="authorImage">
                     <div class="row" id="textBox">
                         <div class="col-md-12">
-
                             <div class="row" id="authorQuote"></div>
                             <br>
                             <div class="row" id="authorName"><strong></strong></div>
-
-                            <button class="btn btn-default btn-lg favButton" id="favoriteButton">Add to Favorites</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="favoriteButton" id="favoriteButton">Add to Favorites</button>
                         </div>
                     </div>
                 </div>
@@ -167,6 +164,8 @@
                         <tr>
                         <th class="thAthor">Author</th>
                         <th>Quote</th>
+                        <th>Yoda</th>
+                        <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -227,6 +226,7 @@
             
      
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
     <script src="./assets/javascript/main.js"></script>
 
