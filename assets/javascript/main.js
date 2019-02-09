@@ -10,10 +10,6 @@ var currentFavorites = [];
 var quoteImage = "defaultQuote.jpg";
 
 var yodaRandom = Math.floor(Math.random() * yodaImages.length);
-console.log(yodaRandom);
-
-// var quoteBoxRandom = Math.floor(Math.random() * quoteBoxImages.length);
-// console.log(quoteBoxRandom);
 
 var quote;
 
@@ -26,9 +22,7 @@ function quotes(categoryName) {
     var api = "https://quotes.rest/qod?"
     var type = "category="
 
-    var quotesURL = api + "api_key=5jVamSpsv63QvnA&"+ type + categoryName.toLowerCase();
-    console.log(quotesURL);
-    
+    var quotesURL = api + "api_key=5jVamSpsv63QvnA&"+ type + categoryName.toLowerCase();   
 
     yodaRandom = Math.floor(Math.random() * yodaImages.length);
     $("#yodaImage").css("background-image", "url(" + path + yodaImages[yodaRandom] +")");
@@ -42,10 +36,6 @@ function quotes(categoryName) {
             var backgroundQuote = response.contents.quotes[0].background;
             var quote = response.contents.quotes[0].quote;
 
-
-            console.log(author);
-            console.log(quote);
-
             if (backgroundQuote == null ) {
                 backgroundQuote = path + quoteImage;
             }
@@ -57,11 +47,6 @@ function quotes(categoryName) {
     catch(error) {
         console.log(error);
     }
-    // if (quote==null) {
-    //     author = "A message from the Team";
-    //     quote = "Inspiring quote reserves are running low. Try creating your own!"; 
-    //     yoda(author, quote, null);
-    // }
 }
 
 // Yoda API
@@ -121,7 +106,6 @@ firebase.auth().onAuthStateChanged(function(user) {
             var getKey = childSnapshot.key;                
 
             currentFavorites.push(getFavoriteQuote);
-            console.log(currentFavorites);
 
             var newRow = $("<tr>").append(
                 
@@ -156,19 +140,15 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 // yoda favorite button
 $(document).on("click", ".favoritetoYoda", function(event) {
-    console.log("hello");
     event.preventDefault();
     
     var key = this.id.split("yoda_")[1];
-    console.log(key);
     
     var getAuthor = $("#author_" + key).text();
 
     var getFavoriteQuote = $("#quote_" + key).text();
     
     backgroundQuote = path + quoteImage
-
-    console.log(getFavoriteQuote);
 
     yoda(getAuthor, getFavoriteQuote, backgroundQuote);
 
@@ -180,7 +160,6 @@ $(document).on('click', '.removeFavorite', function (event) {
     event.preventDefault();
 
     var currentID = this.id.split("delete_")[1];
-    console.log(currentID);
     // Remove from Firebase
     database.ref(uid).child(currentID).remove();
 
@@ -197,6 +176,7 @@ function clear() {
     localStorage.clear();
     sessionStorage.clear();
     Session.abondon();
+    currentFavorites = "";
 }
 
 // Initialize Everything
@@ -257,8 +237,6 @@ $("#register").on("click", function(event) {
     event.preventDefault();
     var email = $("#emailRegister").val().trim();
     var password = $("#passwordRegister").val().trim();
-    console.log(email);
-    console.log(register);
 
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
         $("#errorRegister").show();
@@ -354,7 +332,6 @@ $(document).on('click','#favoriteButton', function() {
         for (var i=0; i < currentFavorites.length; i++) {
             if (currentFavorites[i] == quoteFavorite) {
                 flag = 0;
-                console.log("exists");
             }
         }
     
