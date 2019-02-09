@@ -274,10 +274,10 @@ $("#logoutButton").on("click", function(event) {
     event.preventDefault();
     firebase.auth().signOut().then(function() {
         clear();
-        location.reload();
     }).catch(function(error) {
         console.log(error);
     });
+    location.reload();
 }); 
 
 
