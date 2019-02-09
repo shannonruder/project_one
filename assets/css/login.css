@@ -1,31 +1,53 @@
+/*------- Firebase Login / Register -------*/
 
-/*------- Firebase Logout -------*/
+input[type=text], input[type=password], textarea {
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    border: 1px solid #dddddd;
+    color: #cccccc;
+    border-radius: 4px; /* rounded corners */
+
+    /* Avoid input and textarea getting pushed outside of div from padding */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    /* Avoid input and textarea getting pushed outside of div from padding */
+}
+
+/*--- Logout ---*/
 
 #logoutContainer {
+    float:right;
     position:relative;
     display: none;
-    overflow: hidden;
-    font-size:14px;
+    font-size:12px;
 }
 
 #userName {
-    color:#ffffff;
     float:left;
     position:relative;
-    padding-right: 20px;
+    font-weight:bold;
+    font-size:12px;
+    padding-top: 2px;
+    padding-right: 10px;
+    color:#777777;
 }
 
-/*------- Firebase Logout End -------*/
+#logoutButton:hover span{
+    color:#333333;
+}
 
+/*--- Login / Register ---*/
 
-/*------- Firebase Login / Register -------*/
 
 #loginContainer {
     float: left;
     position:relative;
     display: block;
-    font-size:14px;
-    padding-right: 20px;
+    font-size:12px;
 }
 
 #registerContainer {
@@ -45,127 +67,84 @@
 
 /* Login Button Text */
 #loginButton span, #registerButton span, #logoutButton span {
-    color:#ffffff;
+    color:#777777;
     font-size:14px; 
     font-weight:bold; 
-    text-shadow:1px 1px #303030;
-    /* padding:0px 29px 0px 10px; */
+    /* text-shadow:1px 1px #fff; */
     display:block;
+    
 }
 
 #registerButton span {
     padding-left: 0px;
 }
 
-#loginButton:hover span, #registerButton:hover span, #logoutButton:hover span{
-    color:#a0a0a0;
-}
-
-#loginButton.active span, #registerButton.active span {
-    background-position:53px -76px;
+#loginButton:hover span, #registerButton:hover span{
+    color:#646464;
 }
 
 /* Login Box */
 #loginBox, #registerBox {
-    position:absolute;
-    top:40px;
-    right:20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* for IE */
+    box-shadow: 0 0 0 1000px rgba(0,0,0,.8);
+    /* for all other browsers */
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,.8);
     display:none;
-    z-index:1;
+    z-index:10;
 }
 
-/* Login Form */
+/* Login / Register Form */
 #loginForm, #registerForm {
     width:248px; 
-    border:1px solid #899caa;
+    border:1px solid #222222;
     border-radius:3px 0 3px 3px;
     -moz-border-radius:3px 0 3px 3px;
-    margin-top:-1px;
-    background:#d2e0ea;
+    background:#888888;
     padding:6px;
 }
 
 #loginForm fieldset, #registerForm fieldset {
-    margin:0 0 12px 0;
-    display:block;
-    border:0;
-    padding:0;
-    /* width: 100%; */
+    margin: 2px;
+    display: block;
 }
 
-fieldset#body {
-    background:#fff;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    padding:10px 13px;
-    margin:0;
+fieldset.body {
+    background: #ffffff;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    padding: 10px 13px;
+    margin: 0;
 }
 
-#body label {
-    color:#3a454d;
-    margin:9px 0 0 0;
-    display:block;
-    float:left;
+.body label {
+    display: block;
+    float: left;
 }
 
-#loginForm #body fieldset label, #registerForm #body fieldset label {
-    display:block;
-    float:none;
-    margin:0 0 6px 0;
+#loginForm .body fieldset label, #registerForm .body fieldset label {
+    display: block;
+    float: none;
+    margin: 5px;
 }
 
 /* Default Input */
-#loginForm input, #registerForm input {
-    width:92%;
-    border:1px solid #899caa;
-    border-radius:3px;
-    -moz-border-radius:3px;
-    color:#3a454d;
-    font-weight:bold;
-    padding:8px 8px;
-    box-shadow:inset 0px 1px 3px #bbb;
-    -webkit-box-shadow:inset 0px 1px 3px #bbb;
-    -moz-box-shadow:inset 0px 1px 3px #bbb;
-    font-size:12px;
+#loginForm, #registerForm {
+    width: 100%;
+    font-weight: bold;
 }
 
-/* Sign In Button */
+/* Sign In / Register Button */
 #loginForm #login, #registerForm #register {
-    width:auto;
-    float:left;
-    background:#339cdf;
-    color:#fff;
-    padding:7px 10px 8px 10px;
-    text-shadow:0px -1px #278db8;
-    border:1px solid #339cdf;
-    box-shadow:none;
-    -moz-box-shadow:none;
-    -webkit-box-shadow:none;
-    margin:0 12px 0 0;
-    cursor:pointer;
-    /* *padding:7px 2px 8px 2px; IE7 Fix */
+    width: auto;
+    text-align: center;
 }
 
 input:focus {
-    outline:none;
+    outline: none;
 }
 
 /*------- Firebase Login / Register End -------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

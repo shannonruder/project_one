@@ -1,40 +1,75 @@
-
 // Quote API Categories
 var path = "./assets/images/";
 
 var categories = ["inspire", "management", "sports", "life", "funny", "love", "art", "students"];
 
-var yodaImages = ["yoda1.jpeg"];// ****** TASK Create array of photos, find photos to use in case quote api does not provide us with a background
+var yodaImages = ["yoda1.jpeg","yoda2.jpeg", "yoda3.jpeg", "yoda4.jpeg", "yoda5.jpeg", "yoda6.jpeg"];
+
+var currentFavorites = [];
+
+var quoteImage = "defaultQuote.jpg";
+
+var yodaRandom = Math.floor(Math.random() * yodaImages.length);
+console.log(yodaRandom);
+
+// var quoteBoxRandom = Math.floor(Math.random() * quoteBoxImages.length);
+// console.log(quoteBoxRandom);
+
+var quote;
 
 var uid;
 
+var email;
+
 // Quote API
 function quotes(categoryName) {
-    var api = "http://quotes.rest/qod?"
+    var api = "https://quotes.rest/qod?"
     var type = "category="
 
-    var quotesCategories = api + type + categoryName;
-    $.ajax({
-        url: quotesCategories,
-        method: "GET"
-    }).then(function(response) {
-        var author = response.contents.quotes[0].author;
-        var background = response.contents.quotes[0].background;
-        var quote = response.contents.quotes[0].quote;
+    var quotesURL = api + "api_key=5jVamSpsv63QvnA&"+ type + categoryName.toLowerCase();
+    console.log(quotesURL);
+    
 
-        if (background == null) {
-            background = path + "defaultQuote.jpg";
-        }
-        
-        yoda(author, quote, background);
-    });
+    yodaRandom = Math.floor(Math.random() * yodaImages.length);
+    $("#yodaImage").css("background-image", "url(" + path + yodaImages[yodaRandom] +")");
+
+    try {
+        $.ajax({
+            url: quotesURL,
+            method: "GET"
+        }).then(function(response) {
+            var author = response.contents.quotes[0].author;
+            var backgroundQuote = response.contents.quotes[0].background;
+            var quote = response.contents.quotes[0].quote;
+
+
+            console.log(author);
+            console.log(quote);
+
+            if (backgroundQuote == null ) {
+                backgroundQuote = path + quoteImage;
+            }
+            
+
+            yoda(author, quote, backgroundQuote);
+        });
+    }
+    catch(error) {
+        console.log(error);
+    }
+    // if (quote==null) {
+    //     author = "A message from the Team";
+    //     quote = "Inspiring quote reserves are running low. Try creating your own!"; 
+    //     yoda(author, quote, null);
+    // }
 }
 
 // Yoda API
-function yoda(author, quote, background) {
-    try{    
-        // var test = "Hello my name is Aris";
-        var yodaURL = "https://api.funtranslations.com/translate/yoda.json?text=" + quote;
+function yoda(author, quote, backgroundQuote) {
+    var api = "https://api.funtranslations.com/translate/yoda.json?"
+    var inputQuote = "text=" + quote;
+    var yodaURL = api + "api_key=1foP2YXSqnKYM_RwSYIyvweF&" + inputQuote;
+    try{
         $.ajax({
             url: yodaURL,
             method: "GET"
@@ -45,11 +80,11 @@ function yoda(author, quote, background) {
             $("#authorName").text(author);
             $("#authorQuote").text(quote);
             $("#yodaQuote").text(yodaText);
-            $("#authorImage").css("background-image", "url("+ background +")");
+            $("#yoda").text("Yoda");
+            $("#authorImage").css("background-image", "url(" + backgroundQuote +")");
             
-            
-            console.log("Yoda: " + yodaText);
         });
+        
     }
     catch(error) {
         console.log(error)
@@ -74,24 +109,31 @@ var database = firebase.database();
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         // User is signed in
-        var email = user.email;
+        email = user.email;
         // *********** Below will get user Favorites from Firebase
         uid = user.uid;
         
         $("#userName").text(email);
         database.ref(uid).on("child_added", function(childSnapshot) {
-
+            
             var getFavoriteAuthor = childSnapshot.val().author;
             var getFavoriteQuote = childSnapshot.val().quote;
-            console.log(uid);
-            // Create the new row
+            var getKey = childSnapshot.key;                
+
+            currentFavorites.push(getFavoriteQuote);
+            console.log(currentFavorites);
+
             var newRow = $("<tr>").append(
-                $("<td>").text(getFavoriteAuthor),
-                $("<td>").text(getFavoriteQuote),
+                
+                $("<td id='author_" + getKey + "'>").text(getFavoriteAuthor),                
+                $("<td id='quote_" + getKey + "'>" ).text(getFavoriteQuote),
+                $("<td>").append($("<img class='favoritetoYoda' src='" + path + "yoda.png' width='50px' height='40px' id='yoda_" + getKey + "'></img>")),
+                $("<td>").append($("<img class='removeFavorite' src='" + path + "delete.png' width='40px' height='40px' id='delete_" + getKey + "'></img>"))
+                
             );
-            
+
             // Append the new row to the table
-            $("#favoriteQuotes > tbody").append(newRow);
+            $("#favoriteQuotes > tbody").append(newRow);       
             
         });
         $("#loginContainer").hide();        
@@ -112,7 +154,44 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 
-// Clear
+// yoda favorite button
+$(document).on("click", ".favoritetoYoda", function(event) {
+    console.log("hello");
+    event.preventDefault();
+    
+    var key = this.id.split("yoda_")[1];
+    console.log(key);
+    
+    var getAuthor = $("#author_" + key).text();
+
+    var getFavoriteQuote = $("#quote_" + key).text();
+    
+    backgroundQuote = path + quoteImage
+
+    console.log(getFavoriteQuote);
+
+    yoda(getAuthor, getFavoriteQuote, backgroundQuote);
+
+});
+
+// Delete Favorite
+$(document).on('click', '.removeFavorite', function (event) {
+    
+    event.preventDefault();
+
+    var currentID = this.id.split("delete_")[1];
+    console.log(currentID);
+    // Remove from Firebase
+    database.ref(uid).child(currentID).remove();
+
+    // Remove from screen
+    $(this).closest('tr').remove();
+            
+
+});
+  
+
+// // Clear
 
 function clear() {
     localStorage.clear();
@@ -123,19 +202,34 @@ function clear() {
 // Initialize Everything
 function InitializeWindow() {
     for (var i=0; i<categories.length; i++) {
-        var tableRow =  $("<tr>");
-        var tableItem = $("<td>");
+        // var tableRow =  $("<tr>");
+        var tableItem = $("<li>");
         var categoriesButton = $("<button>");
+        categoriesButton.css("outline", "0");
         categoriesButton.addClass("categoriesButton");
         categoriesButton.attr("id", i);
-        categoriesButton.text(categories[i]);
-        tableRow.append(tableItem);
+        categoriesButton.text(categories[i].toUpperCase());
+        // tableRow.append(tableItem);
         tableItem.append(categoriesButton);
         $("#quoteCategories").append(tableItem);
-
-        $("#yodaImage").css("background-image", "url(" + path + "yoda1.jpeg" +")");
+        
+        $("#authorImage").css("background-image", "url(" + path + quoteImage +")");
+        $("#yodaImage").css("background-image", "url(" + path + yodaImages[yodaRandom] +")");
     }
 }
+
+// Login Action
+$("#login").on("click", function(event) {
+    event.preventDefault();
+    var email = $("#email").val().trim();
+    var password = $("#password").val().trim();
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        $("#errorLogin").show();
+        setTimeout(function(){ 
+            $("#errorLogin").hide();
+        }, 2000);
+    });
+});
 
 // Login Form
 $(function() {
@@ -143,7 +237,7 @@ $(function() {
     var box = $('#loginBox');
     var form = $('#loginForm');
     button.removeAttr('href');
-    button.mouseup(function(login) {
+    button.mouseup(function() {
         box.toggle();
         button.toggleClass('active');
     });
@@ -157,6 +251,23 @@ $(function() {
         }
     });
 });
+
+// Register Action
+$("#register").on("click", function(event) {
+    event.preventDefault();
+    var email = $("#emailRegister").val().trim();
+    var password = $("#passwordRegister").val().trim();
+    console.log(email);
+    console.log(register);
+
+    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        $("#errorRegister").show();
+        setTimeout(function(){ 
+            $("#errorRegister").hide();
+        }, 2000);
+      });
+});
+
 
 // Register Form
 $(function() {
@@ -180,50 +291,7 @@ $(function() {
 });
 
 
-// On Click - Search for Category from Button
-$(document).on('click','.categoriesButton', function() {
-    var categoryName = $(this).text();
-    quotes(categoryName);
-});
-
-
-// On Click - Add to Favorite
-$(document).on('click','#favoriteButton', function() {
-    var authorFavorite = $(authorName).text();
-    var quoteFavorite = $(authorQuote).text();
-    if (authorFavorite != "" && quoteFavorite != "") {
-        database.ref(uid).push({
-            author: authorFavorite,
-            quote: quoteFavorite,
-            dateAdded: firebase.database.ServerValue.TIMESTAMP
-        });
-    }
-});
-
-// Login Link
-$("#login").on("click", function(event) {
-    event.preventDefault();
-    var email = $("#email").val().trim();
-    var password = $("#password").val().trim();
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-        console.log(error);
-    });
-});
-
-// Register Link
-$("#register").on("click", function(event) {
-    event.preventDefault();
-    var email = $("#emailRegister").val().trim();
-    var password = $("#passwordRegister").val().trim();
-    console.log(email);
-    console.log(register);
-
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-        console.log(error);
-      });
-});
-
-// Logout Link
+// Logout Action
 $("#logoutButton").on("click", function(event) {
     event.preventDefault();
     firebase.auth().signOut().then(function() {
@@ -233,7 +301,116 @@ $("#logoutButton").on("click", function(event) {
     });
 }); 
 
+
+// on Click Your Quote
+$(document).on('click','#topNavLeft', function() {
+    
+    $("#containerUserQuote").show();
+
+    $("#containerCategories").hide();
+    
+});
+
+// on Click Quote of the Day
+$(document).on('click','#topNavRight', function() {
+    
+    $("#containerCategories").show();
+
+    $("#containerUserQuote").hide();
+    
+});
+
+
+//On Enter - Translate what is typed into textbox
+$("#userQuote").keypress(function(event) {
+    var keycode = event.charCode || event.keyCode; // depending on browser - for compatibility
+    
+    backgroundQuote = path + quoteImage
+
+    if(keycode == '13') {
+        
+
+        yoda(email, $("#userQuote").val(), backgroundQuote);      
+    }
+});
+
+
+
+
+// On Click - Search for Category from Button
+$(document).on('click','.categoriesButton', function() {
+    var categoryName = $(this).text();
+    quotes(categoryName);
+});
+
+    
+
+// On Click - Add to Favorite
+$(document).on('click','#favoriteButton', function() {
+    var authorFavorite = $(authorName).text();
+    var quoteFavorite = $(authorQuote).text();
+    
+    var flag = 1;
+        for (var i=0; i < currentFavorites.length; i++) {
+            if (currentFavorites[i] == quoteFavorite) {
+                flag = 0;
+                console.log("exists");
+            }
+        }
+    
+
+
+    if (authorFavorite != "" && quoteFavorite != "" && flag) {
+        database.ref(uid).push({
+            author: authorFavorite,
+            quote: quoteFavorite,
+            dateAdded: firebase.database.ServerValue.TIMESTAMP
+        });
+    }
+});
+
+
+
+
+
 // Everything starts here
 window.onload = function() {
     InitializeWindow();
 }
+     
+  
+// Validate Register Form
+$("#registerForm").validate({
+    rules: {
+        emailRegister: {
+            required: true,
+            email: true
+        },
+        passwordRegister: { 
+            required: true,
+            minlength: 6,
+            maxlength: 16,
+        }, 
+        cfmPasswordRegister: {
+            required: true,
+            equalTo: "#passwordRegister",
+            minlength: 6,
+            maxlength: 16
+        }
+    },
+    messages:{
+        emailRegister: {
+            required: "Your email is required!"
+        },
+        passwordRegister: { 
+            required: "A password is required!"
+        },
+        cfmPasswordRegister: {
+            required: "Please confirm your password!"
+        }
+    }
+    
+});
+
+
+
