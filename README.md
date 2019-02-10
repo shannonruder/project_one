@@ -1,2 +1,2 @@
 # Project-One
-![Alt text](assets/images/demo.png?raw=true "Demo")
+![Alt text](assets/images/demoFinal.png?raw=true "Demo")
