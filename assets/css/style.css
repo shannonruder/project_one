@@ -5,7 +5,6 @@ body{
 		font-family: 'Source Sans Pro', sans-serif;
 		font-weight: 900;
 		font-size: 16px;
-    /* line-height: 1.8; */
     text-align: left;
     background: url("../images/background.gif") no-repeat center center;
     min-height: 100vh;
@@ -15,7 +14,6 @@ body{
     background-size: cover;
 }
 
-
 .navbar .navbar-dark .bg-dark {
   color: #0000;
 }
@@ -23,7 +21,6 @@ body{
 #mainWrapper {
   background-color:white;
   padding: 0;
-/* background-color: rgb(0, 0, 0, .7); */
 }
 
 .container {
@@ -68,53 +65,6 @@ body{
 	margin: 0;
 }
 
-h2 {
-  text-align: center;
-  font-size: .7em;
-  text-transform: uppercase;
-  color:#cc0000;
-  letter-spacing: 3px;
-  /* color: #303030; */
-  font-weight: 600;
-}
-
-h4 {
-  font-size: 14px;
-  color:#ffffff;
-  letter-spacing: 1px;
-  /* color: #303030; */
-  font-weight: 400;
-}
-
-h5 {
-  font-size: 12px;
-  font-weight: bold;
-  color:#777777;
-}
-
-.yodaquo-text-body {
-  /* color:#f9f9f9; */
-  font-size: 14px !important;
-  letter-spacing: 1px;
-}
-
-.red {
-  /* color: #8e44ad; */
-color: #cc0000;
-}
-
-img {
-  vertical-align: middle;
-}
-
-/* remove rounding from cards, buttons, jumbotron and inputs */
-.card, .btn, .form-control,.navbar .navbar-dark .bg-dark,.jumbotron { border-radius: 0; }
-
-.share-buttons {
-  padding: 10px;
-}
-/********** Main Structure End **********/
-
 .socialLinks {
   text-decoration:none;
   padding: 10px;
@@ -140,7 +90,6 @@ a:active {
   text-decoration: none;
 }
 
-
 footer {
   padding-top: 25px;
   width: 100%;
@@ -154,128 +103,64 @@ footer li {
   padding: 5px;
 }
 
-.team, .socialIcons {
-  margin: 0 auto;
-  max-width: 500px
-}
-
 footer hr {
   margin: 25px 0;
   width: 100%;
   background-color: #777777;
 }
 
+.team, .socialIcons {
+  margin: 0 auto;
+  max-width: 500px
+}
 
-
-/*********** MAKE YOUR OWN QUOTE/ QUOTE OF THE DAY  ************/
-/***********               BUTTON BAR               ************/
-
-
-#topNavLeft {
-  font-weight: 700;
-  outline: 0px;
-  text-decoration:none;
+h2 {
+  text-align: center;
+  font-size: .7em;
   text-transform: uppercase;
-	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
-	/* o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px; */
-	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
-	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
-	background:#537f41;
-	background:-o-linear-gradient(90deg, #537f41, #75b25b);
-	background:-moz-linear-gradient( center top, #537f41 5%, #75b25b 100% );
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #537f41), color-stop(1, #75b25b) );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#537f41', endColorstr='#75b25b');
-	background:-webkit-linear-gradient(#537f41, #75b25b);
-	background:-ms-linear-gradient(#537f41, #75b25b);
-	background:linear-gradient(#537f41, #75b25b);
-	-moz-border-radius:50px 0 0 50px;
-	-webkit-border-radius:50px 0 0 50px;
-	border-radius:50px 0 0 50px;
-	text-align:center;
-	vertical-align:middle;
-	display:inline-block;
-	font-size:16px;
-	color:#deddc9;
-	width:155px;
-	height:40px;
-	border-color:#303023;
-	border-width:1px;
-	border-style:solid;
+  color:#cc0000;
+  letter-spacing: 3px;
+  font-weight: 600;
 }
 
-#topNavLeft:active {
-	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
-	/* o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px; */
-	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
-	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
-	position:relative;
-	top:3px
+h4 {
+  font-size: 14px;
+  color:#ffffff;
+  letter-spacing: 1px;
+  font-weight: 400;
 }
 
-#topNavLeft:hover {
-	background:#75b25b;
-	background:-o-linear-gradient(90deg, #75b25b, #537f41);
-	background:-moz-linear-gradient( center top, #75b25b 5%, #537f41 100% );
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #75b25b), color-stop(1, #537f41) );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#75b25b', endColorstr='#537f41');
-	background:-webkit-linear-gradient(#75b25b, #537f41);
-	background:-ms-linear-gradient(#75b25b, #537f41);
-	background:linear-gradient(#75b25b, #537f41);
+h5 {
+  font-size: 12px;
+  font-weight: bold;
+  color:#777777;
 }
 
-
-#topNavRight {
-  font-weight: 700;
-  outline: 0px;
-  text-decoration:none;
-  text-transform: uppercase;
-	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
-	/* o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px; */
-	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
-	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
-	background:#537f41;
-	background:-o-linear-gradient(90deg, #537f41, #75b25b);
-	background:-moz-linear-gradient( center top, #537f41 5%, #75b25b 100% );
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #537f41), color-stop(1, #75b25b) );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#537f41', endColorstr='#75b25b');
-	background:-webkit-linear-gradient(#537f41, #75b25b);
-	background:-ms-linear-gradient(#537f41, #75b25b);
-	background:linear-gradient(#537f41, #75b25b);
-	-moz-border-radius:0 50px 50px 0;
-	-webkit-border-radius:0 50px 50px 0;
-	border-radius:0 50px 50px 0;
-	text-align:center;
-	vertical-align:middle;
-	display:inline-block;
-	font-size:16px;
-	color:#deddc9;
-	width:155px;
-	height:40px;
-	border-color:#303023;
-	border-width:1px;
-	border-style:solid;
+.yodaquo-text-body {
+  font-size: 14px !important;
+  letter-spacing: 1px;
 }
 
-#topNavRight:active {
-	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
-	/* o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px; */
-	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
-	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
-	position:relative;
-	top:3px
+.red {
+color: #cc0000;
 }
 
-#topNavRight:hover {
-	background:#75b25b;
-	background:-o-linear-gradient(90deg, #75b25b, #537f41);
-	background:-moz-linear-gradient( center top, #75b25b 5%, #537f41 100% );
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #75b25b), color-stop(1, #537f41) );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#75b25b', endColorstr='#537f41');
-	background:-webkit-linear-gradient(#75b25b, #537f41);
-	background:-ms-linear-gradient(#75b25b, #537f41);
-	background:linear-gradient(#75b25b, #537f41);
+img {
+  vertical-align: middle;
 }
 
+ul, li {
+  display: inline-block;
+}
+
+/* remove rounding from cards, buttons, jumbotron and inputs */
+.card, .btn, .form-control,.navbar .navbar-dark .bg-dark,.jumbotron { border-radius: 0; }
+
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
+
+/********** Main Structure End **********/
 
 
 /********** Favorites **********/
@@ -303,18 +188,170 @@ footer hr {
 thead {
   background-color: #75b25b;
 }
+
 /********** Favorites End **********/
 
-ul, li {
-  display: inline-block;
+/********** Quotes **********/
+
+#authorQuote, #yodaQuote {
+  text-align: left;
 }
-/********** Categories **********/
+
+#quoteBoxes {
+	min-height: 400px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.fullHeight {
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+}
+
+#favoriteButton {
+  display: none;
+  margin-top: 100px;
+}
+
+.box {
+  padding: 120px 75px 75px 75px;
+  border: 1px solid #333333;
+}
+
+#textBox {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #c3c4af;
+  min-height: 60px;
+  z-index: 2;
+  padding: 10px;
+}
+
+#authorImage, #yodaImage {
+  background-size: cover;
+	background-repeat: no-repeat;
+  z-index: 1;
+}
+
+#loginButton, #registerButton {
+  text-transform: uppercase;
+}
+
+/********** Quotes End **********/
+
+
+/********** Buttons **********/
+
+button {
+	outline: 0px;
+}
+
+#topNavLeft {
+  font-weight: 700;
+  outline: 0px;
+  text-decoration:none;
+  text-transform: uppercase;
+	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
+	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
+	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
+	background:#537f41;
+	background:-o-linear-gradient(90deg, #537f41, #75b25b);
+	background:-moz-linear-gradient( center top, #537f41 5%, #75b25b 100% );
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #537f41), color-stop(1, #75b25b) );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#537f41', endColorstr='#75b25b');
+	background:-webkit-linear-gradient(#537f41, #75b25b);
+	background:-ms-linear-gradient(#537f41, #75b25b);
+	background:linear-gradient(#537f41, #75b25b);
+	-moz-border-radius:50px 0 0 50px;
+	-webkit-border-radius:50px 0 0 50px;
+	border-radius:50px 0 0 50px;
+	text-align:center;
+	vertical-align:middle;
+	display:inline-block;
+	font-size:16px;
+	color:#deddc9;
+	width:155px;
+	height:40px;
+	border-color:#303023;
+	border-width:1px;
+	border-style:solid;
+}
+
+#topNavLeft:active {
+	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
+	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
+	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
+	position:relative;
+	top:3px
+}
+
+#topNavLeft:hover {
+	background:#75b25b;
+	background:-o-linear-gradient(90deg, #75b25b, #537f41);
+	background:-moz-linear-gradient( center top, #75b25b 5%, #537f41 100% );
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #75b25b), color-stop(1, #537f41) );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#75b25b', endColorstr='#537f41');
+	background:-webkit-linear-gradient(#75b25b, #537f41);
+	background:-ms-linear-gradient(#75b25b, #537f41);
+	background:linear-gradient(#75b25b, #537f41);
+}
+
+
+#topNavRight {
+  font-weight: 700;
+  outline: 0px;
+  text-decoration:none;
+  text-transform: uppercase;
+	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
+	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
+	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
+	background:#537f41;
+	background:-o-linear-gradient(90deg, #537f41, #75b25b);
+	background:-moz-linear-gradient( center top, #537f41 5%, #75b25b 100% );
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #537f41), color-stop(1, #75b25b) );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#537f41', endColorstr='#75b25b');
+	background:-webkit-linear-gradient(#537f41, #75b25b);
+	background:-ms-linear-gradient(#537f41, #75b25b);
+	background:linear-gradient(#537f41, #75b25b);
+	-moz-border-radius:0 50px 50px 0;
+	-webkit-border-radius:0 50px 50px 0;
+	border-radius:0 50px 50px 0;
+	text-align:center;
+	vertical-align:middle;
+	display:inline-block;
+	font-size:16px;
+	color:#deddc9;
+	width:155px;
+	height:40px;
+	border-color:#303023;
+	border-width:1px;
+	border-style:solid;
+}
+
+#topNavRight:active {
+	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
+	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
+	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
+	position:relative;
+	top:3px
+}
+
+#topNavRight:hover {
+	background:#75b25b;
+	background:-o-linear-gradient(90deg, #75b25b, #537f41);
+	background:-moz-linear-gradient( center top, #75b25b 5%, #537f41 100% );
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #75b25b), color-stop(1, #537f41) );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#75b25b', endColorstr='#537f41');
+	background:-webkit-linear-gradient(#75b25b, #537f41);
+	background:-ms-linear-gradient(#75b25b, #537f41);
+	background:linear-gradient(#75b25b, #537f41);
+}
+
 
 .categoriesButton {
   font-weight: 700;
 	text-decoration:none;
 	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
-	/* o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px; */
 	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
 	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 3px 2px;
 	background:#537f41;
@@ -345,7 +382,6 @@ ul, li {
 
 .categoriesButton:active {
 	box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
-	/* o-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px; */
 	-moz-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
 	-webkit-box-shadow:inset #ffffff 0px 5px 8px -1px,#303023 1px 0 2px;
 	position:relative;
@@ -362,69 +398,6 @@ ul, li {
 	background:-ms-linear-gradient(#75b25b, #537f41);
 	background:linear-gradient(#75b25b, #537f41);
 }
-
-/********** Categories End **********/
-
-
-/********** Quotes **********/
-
-#authorQuote, #yodaQuote {
-  text-align: left;
-}
-
-#quoteBoxes {
-	min-height: 400px;
-	padding: 0px;
-	margin: 0px;
-}
-
-.fullHeight {
-	height: 100%;
-	width: 100%;
-	margin: 0 auto;
-}
-
-#favoriteButton {
-  display: none;
-  margin-top: 100px;
-}
-
-.box {
-  padding: 120px 75px 75px 75px;
-  border: 1px solid #333333;
-  /* overflow: hidden; */
-}
-
-#textBox {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #c3c4af;
-  min-height: 60px;
-  z-index: 2;
-  padding: 10px;
-}
-
-#authorImage, #yodaImage {
-  background-size: cover;
-	background-repeat: no-repeat;
-	/* min-height: 400px; */
-	/* width: 500px; */
-  z-index: 1;
-}
-
-#loginButton, #registerButton {
-  text-transform: uppercase;
-}
-
-
-
-/********** Quotes End **********/
-
-
-@-moz-document url-prefix() {
-  fieldset { display: table-cell; }
-}
-
-
 
 
 .favoriteButton {
@@ -478,6 +451,7 @@ ul, li {
 	background:linear-gradient(#537f41, #75b25b);
 }
 
+
 .button {
 	-moz-box-shadow:inset 0px 0px 14px -3px #f2fadc;
 	-webkit-box-shadow:inset 0px 0px 14px -3px #f2fadc;
@@ -504,6 +478,7 @@ ul, li {
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ced9bf;
 }
+
 .button:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #9ba892), color-stop(1, #dbe6c4));
 	background:-moz-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
@@ -514,16 +489,17 @@ ul, li {
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#9ba892', endColorstr='#dbe6c4',GradientType=0);
 	background-color:#9ba892;
 }
+
 .button:active {
 	position:relative;
 	top:1px;
 }
 
-        
+/********** Buttons End **********/
 
 
+/********** Login / Register Error **********/
 
-/* Message Box for Error of Start Time & Login Error  */
 #errorLogin, #errorRegister {
 	position: fixed;
 	padding: 10px;
@@ -543,3 +519,5 @@ ul, li {
 	display:none;
 	z-index:10;
 }
+
+/********** Login / Register Error End **********/
