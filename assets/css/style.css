@@ -170,15 +170,14 @@ ul, li {
 }
 
 #nofavoritesContainer {
-  display: block;
-  padding: 1.2em 2.8em;
+	display: block;
+	padding: 20px 5px;
 }
 
 #favoritesContainer {
   display: none;
- 
-  text-align: left;
-  padding: 1.2em 2.8em;
+	text-align: left;
+	padding: 20px 2px;
 }
 
 .thAthor {
@@ -198,7 +197,7 @@ thead {
 }
 
 #quoteBoxes {
-	min-height: 400px;
+	/* min-height: 400px; */
 	padding: 0px;
 	margin: 0px;
 }
